@@ -1,0 +1,1 @@
+En este repositorio se almacena la página web del proyecto WeFUN.
