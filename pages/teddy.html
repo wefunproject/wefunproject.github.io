@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/teddy.css" />
+
+  <!-- Carga dinámica del bloque común del <head> -->
+  <script type="module">
+    fetch('/components/head-common.html')
+      .then(res => res.text())
+      .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        Array.from(temp.children).forEach(el => {
+          document.head.appendChild(el);
+        });
+      });
+  </script>
+</head>
+
+<body>
+  <div id="my-header-container"></div>
+
+  <main>
+    <section class="colaboradores-section">
+      <h2 class="section-title">Digital Teddy</h2>
+      <p class="section-text">
+        La atención selectiva es esencial en la vida diaria y desempeña un papel importante durante la infancia, ya que
+        facilita el desarrollo del movimiento o de la cognición. Sin embargo, no existen suficientes herramientas
+        estandarizadas que sean prácticas en entornos clínicos y académicos.
+      </p>
+
+      <p class="section-text">
+        Presentamos una nueva aplicación, <em>Digital Teddy</em>, desarrollada para realizar de forma estandarizada el
+        Test de Cancelación del Osito de Peluche (<em>Teddy Bear Cancellation Test</em>, TBCT) en un dispositivo móvil o
+        tableta.
+      </p>
+
+      <p class="section-text">
+        Un total de 45 niños con desarrollo típico, con edades comprendidas entre los 2 y los 8 años, realizaron el TBCT
+        en papel y en tableta en una única sesión de prueba aleatoria. Las variables evaluadas fueron el número y la
+        ubicación de las omisiones, así como la localización de los tres primeros objetivos encontrados. <em>Digital
+          Teddy</em> también registró la precisión en el señalamiento y el tiempo total empleado.
+      </p>
+
+      <p class="section-text">
+        Los datos preliminares mostraron que el número de omisiones fue similar tanto en la versión original como en la
+        digital del TBCT. Además, <em>Digital Teddy</em> registró los datos con mayor precisión que la versión original
+        (precisión, tiempo, etc.) y puede configurarse de forma distinta según la edad o el nivel de atención. Los datos
+        también revelaron una muy buena satisfacción por parte de los administradores del test.
+      </p>
+
+      <p class="section-text">
+        Actualmente se está ampliando el tamaño de la muestra, tanto en número como en condiciones médicas con riesgo de
+        presentar déficits de atención. <em>Digital Teddy</em> podría ser útil en la práctica clínica diaria, ya que
+        requiere poco tiempo, escasos recursos humanos y materiales, y utiliza tecnología doméstica y asequible,
+        mostrando resultados similares a los del test original.
+      </p>
+
+      <br>
+      <p class="section-text"><strong>Autores/as</strong></p>
+      <ul class="autores-list">
+        <li>González-Eiroa, Irene</li>
+        <li>Vázquez Araújo, Francisco Javier</li>
+        <li>Castro-Castro, Paula-María</li>
+        <li>Dapena, Adriana</li>
+        <li>Arias, Pablo</li>
+        <li>Robles-García, Verónica</li>
+      </ul>
+
+      <p class="section-text"><strong>Enlaces de interés</strong></p>
+      <ul class="section-list">
+        <li>
+          <a href="https://ruc.udc.es/entities/publication/d3561a43-dec3-4dc8-b0f9-765db1106bd2" target="_blank"
+            rel="noopener noreferrer">
+            Repositorio Universidade Coruña (RUC)
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <div class="image-gallery">
+      <img src="../images/digital_teddy.png" alt="">
+    </div>
+
+    <p class="section-text"><strong>Otros proyectos:</strong></p>
+    <div class="info-buttons">
+      <a href="yc-pem.html" class="info-button">Ver información sobre YC-PEM</a>
+      <a href="satco.html" class="info-button">Ver información sobre SATCo</a>
+    </div>
+
+  </main>
+
+  <div id="my-footer-container"></div>
+
+  <script src="../scripts/common.js"></script>
+  <script type="module" src="../scripts/teddy.js"></script>
+
+  <!-- Modal para imagen ampliada -->
+  <div id="image-modal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img" alt="">
+    <div id="modal-caption"></div>
+  </div>
+</body>
+
+</html>

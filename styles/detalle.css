@@ -1,0 +1,338 @@
+.author,
+.date {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+#publication-detail {
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+    padding: 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+#title {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-top: 0.2rem;
+    /* menos espacio arriba */
+    margin-bottom: 1rem;
+    /* más espacio abajo */
+}
+
+
+#description {
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+#comments-section {
+    margin-top: 30px;
+}
+
+.comment {
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.comment.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.comment strong {
+    font-size: 1rem;
+    color: #111827;
+}
+
+.comment small {
+    display: block;
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 0.85em;
+}
+
+.comment p {
+    margin-top: 8px;
+    color: #374151;
+}
+
+.comment-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.comment-form input,
+.comment-form textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    resize: vertical;
+    background-color: #f9fafb;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #60a5fa;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Botón Enviar comentario mejorado */
+.comment-form button {
+    width: 140px;
+    padding: 12px 0;
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    text-align: center;
+}
+
+.comment-form button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+    box-shadow: 0 6px 16px rgba(33, 136, 56, 0.8);
+}
+
+.comment-form button:active:not(:disabled) {
+    background: #1c7430;
+    box-shadow: none;
+}
+
+.comment-form button:disabled {
+    background-color: #94d3a2;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-back {
+    display: inline-block;
+    margin: 1.5rem 0 2rem 0;
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 3px 7px rgba(74, 144, 226, 0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background-color: #357abd;
+    box-shadow: 0 5px 12px rgba(53, 122, 189, 0.7);
+}
+
+.btn-back:active {
+    background-color: #2a5d91;
+    box-shadow: none;
+}
+
+.btn-back:focus {
+    outline: 3px solid #a6c8ff;
+    outline-offset: 2px;
+}
+
+.separator-line {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+    margin: 2.5rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    border-radius: 2px;
+}
+
+#comments-section>h3 {
+    margin-bottom: 1rem;
+    /* espacio entre "Comentarios" y la línea */
+}
+
+
+.comment-form h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    /* espacio entre "¿Te animas a comentar?" y la línea */
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.oculto {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn-confirm {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-confirm:hover {
+    background-color: #218838;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-cancel:hover {
+    background-color: #b02a37;
+}
+
+/* Modales de éxito y error */
+
+#success-modal .modal-content,
+#error-modal .modal-content {
+    text-align: center;
+    /* Centrar texto en estos modales */
+    padding: 2rem 2.5rem;
+}
+
+#success-modal h3,
+#error-modal h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#success-modal p,
+#error-modal p {
+    font-size: 1.1rem;
+    color: #374151;
+    /* gris oscuro */
+    margin-bottom: 1.5rem;
+}
+
+#success-modal button,
+#error-modal button {
+    padding: 0.6rem 1.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Botón OK éxito */
+#success-modal button {
+    background-color: #28a745;
+    /* Verde acorde a tu botón enviar */
+    color: white;
+}
+
+#success-modal button:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 16px rgba(33, 136, 56, 0.8);
+}
+
+#success-modal button:active {
+    background-color: #1c7430;
+    box-shadow: none;
+}
+
+/* Botón OK error */
+#error-modal button {
+    background-color: #dc3545;
+    /* Rojo tipo btn-cancel */
+    color: white;
+}
+
+#error-modal button:hover {
+    background-color: #b02a37;
+    box-shadow: 0 6px 16px rgba(176, 42, 55, 0.8);
+}
+
+#error-modal button:active {
+    background-color: #7f2227;
+    box-shadow: none;
+}
+
+.news-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+    display: block;
+    margin: 1rem auto;
+}

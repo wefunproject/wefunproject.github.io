@@ -1,0 +1,146 @@
+/* styles/nosotros.css */
+
+/* Galería de imágenes */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  /* max-width: 900px; */
+  margin: 0 auto;
+}
+
+.image-gallery a {
+  flex: 1 1 150px;
+  max-width: 180px;
+  display: flex;
+  /* Para centrar la imagen */
+  align-items: center;
+  /* Centrado vertical */
+  justify-content: center;
+  /* Centrado horizontal */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: #F1F1F1;
+  /* Fondo para zonas vacías */
+}
+
+.image-gallery a:hover {
+  transform: scale(1.05);
+}
+
+.image-gallery img {
+  max-width: 100%;
+  max-height: 120px;
+  /* Altura máxima fija */
+  object-fit: contain;
+  /* La imagen se ve completa */
+  border-radius: 8px;
+  display: block;
+}
+
+/* Galería específica para las últimas 3 imágenes con 2 filas */
+.image-gallery.two-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Dos columnas iguales */
+  grid-template-rows: auto auto;
+  justify-content: center;
+  max-width: 720px;
+  /* Igual que .team-card */
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.image-gallery.two-rows a:nth-child(1) {
+  grid-column: 1 / -1;
+  /* Ocupa las dos columnas (fila completa) */
+}
+
+.image-gallery.two-rows a {
+  flex: none;
+  /* Quitar flex-grow para el grid */
+  max-width: 100%;
+}
+
+.image-gallery.two-rows img {
+  max-height: 180px;
+  /* Altura mayor para imágenes más grandes */
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Team container y tarjetas */
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* max-width: 720px; */
+  margin: 2rem auto;
+}
+
+.team-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* Hace la imagen circular */
+  flex-shrink: 0;
+}
+
+.team-info h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.3rem;
+  color: #1f2937;
+}
+
+.team-position {
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.team-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+  text-align: justify;
+}
+
+.team-links {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.team-links a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.team-links a:hover img {
+  transform: scale(1.1);
+}

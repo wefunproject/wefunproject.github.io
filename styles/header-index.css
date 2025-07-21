@@ -1,0 +1,249 @@
+.my-header {
+    height: 100vh;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #264653, #2A9D8F);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.my-header__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* .header-logo {
+    cursor: default !important;
+} */
+
+.my-header__title img {
+    max-height: 90px;
+    width: auto;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.header-img-left,
+.header-img-right {
+    max-height: 80px;
+    cursor: default;
+    pointer-events: none;
+}
+
+.header-img-left {
+    margin-right: 100px;
+}
+
+.header-img-right {
+    margin-left: 100px;
+}
+
+#project-description {
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.my-header__nav {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 20;
+}
+
+/* Menú común para ambos headers: UL con clase my-header__menu */
+.my-header__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 900px;
+}
+
+.my-header__menu li {
+    position: relative;
+}
+
+.my-header__menu li a {
+    display: block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.my-header__menu li a:hover {
+    background-color: #00d1b2;
+    color: #fff;
+}
+
+.my-header__menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 25%;
+    bottom: 25%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#menu-toggle-index,
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    z-index: 1001;
+}
+
+/* Scroll down arrow con 2 flechas, centradas, que se mueven solo arriba y abajo */
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    user-select: none;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.scroll-down-arrow span {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-bottom: 5px solid rgba(255, 255, 255, 0.8);
+    border-right: 5px solid rgba(255, 255, 255, 0.8);
+    transform: rotate(45deg);
+    animation: slideFade 2s infinite ease-in-out;
+}
+
+.scroll-down-arrow span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideFade {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: rotate(45deg) translateY(8px);
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* Ocultar el menú horizontal y mostrar menú móvil */
+    .my-header__menu {
+        display: none;
+        flex-direction: column;
+        background-color: #287271;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 220px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        padding: 12px 0;
+        z-index: 1000;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .my-header__menu.show {
+        display: flex;
+        animation: fadeInDown 0.3s ease forwards;
+    }
+
+    .my-header__menu li a {
+        padding: 14px 24px;
+        color: #e0e7ff;
+        text-align: left;
+        transition: background-color 0.25s, color 0.25s;
+    }
+
+    .my-header__menu li a:hover,
+    .my-header__menu li a:focus {
+        background-color: #00c3a3;
+        color: #fff;
+        outline: none;
+    }
+
+    .my-header__menu li:not(:last-child)::after {
+        display: none;
+    }
+
+    /* Mostrar botón toggle en móvil */
+    #menu-toggle-index,
+    #menu-toggle {
+        display: block;
+        font-size: 2.3rem;
+        padding: 6px 12px;
+        top: 28px;
+        right: 20px;
+        z-index: 1100;
+        user-select: none;
+        transition: color 0.3s ease;
+    }
+
+    #menu-toggle-index:hover,
+    #menu-toggle-index:focus,
+    #menu-toggle:hover,
+    #menu-toggle:focus {
+        color: #ffffff;
+        outline: none;
+    }
+
+    .my-header {
+        position: relative;
+    }
+
+    .header-img-left,
+    .header-img-right {
+        display: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

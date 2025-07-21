@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/colaboradores.css" />
+
+  <!-- Carga dinámica del bloque común del <head> -->
+  <script type="module">
+    fetch('/components/head-common.html')
+      .then(res => res.text())
+      .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        Array.from(temp.children).forEach(el => {
+          document.head.appendChild(el);
+        });
+      });
+  </script>
+</head>
+
+<body>
+  <div id="my-header-container"></div>
+
+  <main>
+    <section class="colaboradores-section">
+      <h2 class="section-title" id="colaboradores_title">Colaboradores</h2>
+      <p class="section-text">
+        En esta sección podrás ver diferentes entidades y personas que colaboran o han colaborado con el proyecto WeFUN:
+      </p>
+
+      <ul class="colaboradores-list">
+        <li>Colaborador 1</li>
+        <li>Colaborador 2</li>
+        <li>Colaborador 3</li>
+      </ul>
+
+      <p class="section-text">
+        Si quieres colaborar con nosotros, no dudes en contactarnos. Puedes ver nuestros datos de contacto
+        pulsando <a id="aqui" href="../pages/contacto.html">aquí</a>.
+      </p>
+
+    </section>
+
+  </main>
+
+  <div id="my-footer-container"></div>
+
+  <script src="../scripts/common.js"></script>
+  <script type="module" src="../scripts/colaboradores.js"></script>
+</body>
+
+</html>

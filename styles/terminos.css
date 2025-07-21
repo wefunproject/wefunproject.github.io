@@ -1,0 +1,35 @@
+.last-updated {
+    font-style: italic;
+    font-size: 0.95rem;
+    text-align: right;
+    margin-bottom: 2rem;
+    color: #6b7280;
+}
+
+main section {
+    margin-bottom: 2.5rem;
+}
+
+main section h3 {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid #00b89c;
+    padding-left: 0.75rem;
+}
+
+main section p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+main section ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+    color: #4b5563;
+}
+
+main section ul li {
+    margin-bottom: 0.5rem;
+}

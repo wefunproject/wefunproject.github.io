@@ -1,0 +1,125 @@
+/* Imágenes generales dentro del main */
+main img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+#hacemos_2 {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Ajustamos margen entre párrafo anterior y lista */
+.evaluation-list {
+    list-style: none;
+    margin-top: 0rem;
+    /* Reducimos el espacio superior */
+    margin-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    /* Más margen izquierdo para indentación */
+    max-width: 720px;
+    color: #4b5563;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.75;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.evaluation-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    /* Padding left mayor para que no choque con bullet */
+    padding-left: 1.5rem;
+}
+
+.evaluation-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    /* Movemos el bullet un poco más a la derecha */
+    top: 0.8em;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #287271;
+    border-radius: 50%;
+}
+
+
+/* Contenedor de imagen individual */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Imagen dentro del contenedor */
+.image-gallery img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Efecto hover */
+.image-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Imagen ampliada en el modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #000;
+}
+
+/* Pie de imagen */
+#modal-caption {
+    margin: auto;
+    display: block;
+    width: 90vw;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1rem;
+}
+
+/* Botón de cierre */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #bbb;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/privacidad.css" />
+
+  <!-- Carga dinámica del bloque común del <head> -->
+  <script type="module">
+    fetch('/components/head-common.html')
+      .then(res => res.text())
+      .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        Array.from(temp.children).forEach(el => {
+          document.head.appendChild(el);
+        });
+      });
+  </script>
+</head>
+
+<body>
+
+  <div id="my-header-container"></div>
+
+  <main>
+    <h2 class="section-title" id="privacidad_title"></h2>
+    <p id="last_updated_privacidad" class="last-updated"></p>
+
+    <section>
+      <h3 id="privacidad_1"></h3>
+      <ul>
+        <li id="privacidad_1_1">Tu nombre.</li>
+        <li id="privacidad_1_2">El contenido del comentario.</li>
+        <li id="privacidad_1_3">Información técnica como la dirección IP y el navegador (Firebase).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 id="privacidad_2">2. ¿Para qué usamos estos datos?</h3>
+      <ul>
+        <li id="privacidad_2_1">Mostrar los comentarios en la web.</li>
+        <li id="privacidad_2_2">Garantizar el funcionamiento y la seguridad del servicio (Firebase).</li>
+        <li id="privacidad_2_3">No usamos tus datos con fines comerciales ni para crear perfiles.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 id="privacidad_3">3. ¿Dónde se almacenan los datos?</h3>
+      <p id="privacidad_3_1">
+        Los datos se almacenan en Google Firebase Realtime Database, que puede alojarlos fuera de la Unión Europea.
+        Google aplica garantías adecuadas como cláusulas contractuales tipo.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="privacidad_4">4. ¿Durante cuánto tiempo conservamos tus datos?</h3>
+      <p id="privacidad_4_1">Los comentarios se conservan indefinidamente, salvo que:</p>
+      <ul>
+        <li id="privacidad_4_2">Solicites su eliminación.</li>
+        <li id="privacidad_4_3">Se detecte contenido inapropiado o abusivo.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 id="privacidad_5">5. ¿Con quién compartimos tus datos?</h3>
+      <p id="privacidad_5_1">No compartimos tus datos con terceros. Solo Firebase (Google) accede a ellos para prestar el servicio.</p>
+    </section>
+
+    <section>
+      <h3 id="privacidad_6">6. Tus derechos</h3>
+      <ul>
+        <li id="privacidad_6_1">Acceder a tus datos.</li>
+        <li id="privacidad_6_2">Solicitar su corrección o eliminación.</li>
+        <li id="privacidad_6_3">Limitar u oponerte al tratamiento.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 id="privacidad_7">7. Cookies</h3>
+      <p id="privacidad_7_1">Este sitio no utiliza cookies propias ni de terceros.</p>
+    </section>
+  </main>
+
+  <div id="my-footer-container"></div>
+
+  <script src="../scripts/common.js"></script>
+  <script type="module" src="../scripts/privacidad.js"></script>
+</body>
+
+</html>

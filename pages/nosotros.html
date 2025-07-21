@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/nosotros.css" />
+
+  <!-- Carga dinámica del bloque común del <head> -->
+  <script type="module">
+    fetch('/components/head-common.html')
+      .then(res => res.text())
+      .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        Array.from(temp.children).forEach(el => {
+          document.head.appendChild(el);
+        });
+      });
+  </script>
+</head>
+
+<body>
+
+  <div id="my-header-container"></div>
+
+  <main>
+    <h2 class="section-title" id="somos"></h2>
+    <p class="section-text" id="description_somos"></p>
+
+    <div class="image-gallery">
+      <a href="https://www.udc.es/" target="_blank" rel="noopener noreferrer">
+        <img src="../images/udc.png" alt="Logo de la UDC" />
+      </a>
+      <a href="https://portalinvestigacion.udc.gal/grupos/13568/detalle" target="_blank" rel="noopener noreferrer">
+        <img src="../images/neurocom.png" alt="Logo del grupo de investigación NEUROcom" />
+      </a>
+      <a href="https://portalinvestigacion.udc.gal/grupos/13584/detalle" target="_blank" rel="noopener noreferrer">
+        <img src="../images/gtec.png" alt="Logo del grupo de investigación GTEC" />
+      </a>
+    </div>
+
+    <br />
+    <p class="section-text" id="description_somos2"></p>
+
+    <section class="team-container" aria-label="Miembros del equipo">
+
+      <div class="team-card">
+        <img src="../images/icon.png" alt="Foto de Verónica Robles García" />
+        <div class="team-info">
+          <h2>Verónica Robles García</h2>
+          <p id="rol_vero" class="team-position"></p>
+          <p id="description_vero" class="team-description"></p>
+          <div class="team-links">
+            <a href="https://portalinvestigacion.udc.gal/investigadores/214430/detalle" target="_blank"
+              rel="noopener noreferrer" class="linkedin-link">
+              <img src="../images/udc.png" alt="Perfil investigadora Verónica Robles" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="../images/icon.png" alt="Foto de Francisco Javier Vázquez Araujo" />
+        <div class="team-info">
+          <h2>Francisco Javier Vázquez Araujo</h2>
+          <p id="rol_fran" class="team-position"></p>
+          <p id="description_fran" class="team-description"></p>
+          <div class="team-links">
+            <a href="https://portalinvestigacion.udc.gal/investigadores/214847/detalle" target="_blank"
+              rel="noopener noreferrer" class="linkedin-link">
+              <img src="../images/udc.png" alt="Perfil investigador Francisco Javier" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="../images/icon.png" alt="Foto de Irene González Eiroa" />
+        <div class="team-info">
+          <h2>Irene González-Eiroa</h2>
+          <p id="rol_irene" class="team-position"></p>
+          <p id="description_irene" class="team-description"></p>
+          <div class="team-links">
+            <a href="https://portalinvestigacion.udc.gal/investigadores/213456/detalle" target="_blank"
+              rel="noopener noreferrer" class="linkedin-link">
+              <img src="../images/udc.png" alt="Perfil investigador Francisco Javier" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="../images/personal/lucas.png" alt="Foto de Lucas Alonso de San Segundo" />
+        <div class="team-info">
+          <h2>Lucas Alonso de San Segundo</h2>
+          <p id="rol_lucas" class="team-position"></p>
+          <p id="description_lucas" class="team-description"></p>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/alonsolucas/" target="_blank" rel="noopener noreferrer"
+              class="linkedin-link">
+              <img src="../images/linkedin.png" alt="Perfil LinkedIn de Lucas Alonso" />
+            </a>
+            <a href="mailto:lucas.alonso@udc.es" class="link">
+              <img src="../images/mail.png" alt="Enviar correo a Lucas Alonso" />
+            </a>
+            <a href="https://github.com/alonsodesansegundo" target="_blank" rel="noopener noreferrer" class="git-link">
+              <img src="../images/git.png" alt="GitHub de Lucas Alonso" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="../images/personal/vanesa.jpeg" alt="Foto de Vanesa González Vila" />
+        <div class="team-info">
+          <h2>Vanesa González Vila</h2>
+          <p id="rol_vanesa" class="team-position"></p>
+          <p id="description_vanesa" class="team-description"></p>
+          <div class="team-links">
+            <a href="https://x.com/vanegovi" target="_blank" rel="noopener noreferrer" class="twitter-link">
+              <img src="../images/twitter.png" alt="Perfil Twitter de Vanesa González" />
+            </a>
+            <a href="https://www.instagram.com/gonzalezvilav/" target="_blank" rel="noopener noreferrer"
+              class="insta-link">
+              <img src="../images/insta.png" alt="Perfil Instagram de Vanesa González" />
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="image-gallery two-rows">
+      <a href="https://cica.udc.gal/" target="_blank" rel="noopener noreferrer">
+        <img src="../images/cica.png" alt="Banner de CICA" />
+      </a>
+      <a href="https://www.ffisacademica.udc.gal/" target="_blank" rel="noopener noreferrer">
+        <img src="../images/fisio.png" alt="Logo de la Facultad de Fisioterapia" />
+      </a>
+      <a href="https://www.sefip.org/" target="_blank" rel="noopener noreferrer">
+        <img src="../images/sefip.png" alt="Logo del SEFIP" />
+      </a>
+    </div>
+
+  </main>
+
+  <div id="my-footer-container"></div>
+
+  <script src="../scripts/common.js"></script>
+  <script src="../scripts/nosotros.js"></script>
+
+</body>
+
+</html>

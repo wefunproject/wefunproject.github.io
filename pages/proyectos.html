@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/proyectos.css" />
+
+    <!-- Carga dinámica del bloque común del <head> -->
+    <script type="module">
+        fetch('/components/head-common.html')
+            .then(res => res.text())
+            .then(html => {
+                const temp = document.createElement('div');
+                temp.innerHTML = html;
+                Array.from(temp.children).forEach(el => {
+                    document.head.appendChild(el);
+                });
+            });
+    </script>
+</head>
+
+<body>
+    <div id="my-header-container"></div>
+
+    <main>
+        <section class="proyectos-section">
+            <h2 id="proyectos-related" class="section-title"></h2>
+            <p id="proyectos_description" class="section-text"></p>
+        </section>
+
+        <section class="proyecto-section" onclick="location.href='teddy.html'" role="link" tabindex="0"
+            onkeypress="if(event.key==='Enter'){location.href='teddy.html'}">
+            <h2 id="teddy" class="section-title">Digital Teddy</h2>
+            <p id="resumen-teddy" class="section-text">Se trata de una herramienta digital para evaluar la atención visual selectiva en
+                niños y niñas en edad prescolar.</p>
+            <div class="image-gallery">
+                <img src="../images/digital_teddy.png" alt="Digital Teddy">
+            </div>
+        </section>
+
+        <section class="proyecto-section" onclick="location.href='yc-pem.html'" role="link" tabindex="0"
+            onkeypress="if(event.key==='Enter'){location.href='yc-pem.html'}">
+            <h2 id="ycpem" class="section-title">YC-PEM</h2>
+            <p id="resumen-ycpem" class="section-text">Resumen breve del proyecto YC-PEM.</p>
+            <div class="image-gallery">
+                <img src="../images/validacion_yc_pem.png" alt="YC-PEM">
+            </div>
+        </section>
+
+        <section class="proyecto-section" onclick="location.href='satco.html'" role="link" tabindex="0"
+            onkeypress="if(event.key==='Enter'){location.href='satco.html'}">
+            <h2 id="satco" class="section-title">SATCo</h2>
+            <p id="resumen-satco" class="section-text">Resumen breve del proyecto SATCo.</p>
+            <div class="image-gallery">
+                <img src="../images/validacion_satco.png" alt="SATCo">
+            </div>
+        </section>
+    </main>
+
+    <div id="my-footer-container"></div>
+
+    <script src="../scripts/common.js"></script>
+    <script type="module" src="../scripts/proyectos.js"></script>
+</body>
+
+</html>

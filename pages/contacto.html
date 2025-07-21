@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/contacto.css" />
+  
+  <!-- Carga dinámica del bloque común del <head> -->
+  <script type="module">
+    fetch('/components/head-common.html')
+      .then(res => res.text())
+      .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        Array.from(temp.children).forEach(el => {
+          document.head.appendChild(el);
+        });
+      });
+  </script>
+</head>
+
+<body>
+
+  <div id="my-header-container"></div>
+
+  <main>
+    <h2 class="section-title" id="contacto2"></h2>
+    <div">
+      <div>
+        <p id="contacto_description" class="section-text"></p>
+
+        <div class="contact-block">
+          <a href="mailto:veronica.robles@udc.es" class="contact-row">
+            <img src="../images/mail.png" alt="Icono de correo" />
+            <span id="vero_mail"></span>
+          </a>
+        </div>
+
+        <p id="rrss_description" class="section-text"></p>
+
+        <div class="contact-block">
+          <a href="https://x.com/_neurocom" class="contact-row" target="_blank" rel="noopener noreferrer">
+            <img src="../images/twitter.png" alt="Icono de Twitter" />
+            <span id="twitter_neurocom">@_Neurocom</span>
+          </a>
+          <a href="https://www.instagram.com/neurocom_" class="contact-row" target="_blank" rel="noopener noreferrer">
+            <img src="../images/insta.png" alt="Icono de Instagram" />
+            <span id="insta_neurocom">@neurocom_</span>
+          </a>
+        </div>
+      </div>
+      </div>
+  </main>
+
+  <div id="my-footer-container"></div>
+
+  <script src="../scripts/common.js"></script>
+  <script src="../scripts/contacto.js"></script>
+</body>
+
+</html>

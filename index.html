@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="/styles/common.css" />
+  <link rel="stylesheet" href="/styles/header-index.css" />
+  <link rel="stylesheet" href="/styles/index.css" />
+
+  <!-- Carga dinámica del bloque común del <head> -->
+  <script type="module">
+    fetch('/components/head-common.html')
+      .then(res => res.text())
+      .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        Array.from(temp.children).forEach(el => {
+          document.head.appendChild(el);
+        });
+      });
+  </script>
+</head>
+
+<body>
+  <div id="my-header-container"></div>
+
+  <main>
+    <h2 class="section-title" id="inicio"></h2>
+    <p class="section-text" id="description_actualidad"></p>
+
+    <div class="div-search">
+      <input type="text" id="search-input" />
+      <button id="search-button" class="btn-search"></button>
+    </div>
+
+    <div id="news-container"></div>
+
+    <div class="btn-nav-container"></div>
+
+    <h2 id="proyectos-related" class="section-title"></h2>
+
+    <div class="image-gallery">
+      <a href="pages/teddy.html">
+        <img src="../images/digital_teddy.png" alt="">
+      </a>
+
+      <a href="pages/yc-pem.html">
+        <img src="../images/validacion_yc_pem.png" alt="">
+      </a>
+
+      <a href="pages/satco.html">
+        <img src="../images/validacion_satco.png" alt="">
+      </a>
+    </div>
+    <br>
+  </main>
+
+  <div id="my-footer-container"></div>
+
+  <script src="/scripts/common.js"></script>
+
+  <script type="module">
+    // Carga del header y luego asignación de evento al scroll arrow
+    fetch('/components/header-index.html')
+      .then(res => res.text())
+      .then(html => {
+        const headerContainer = document.getElementById('my-header-container');
+        headerContainer.innerHTML = html;
+
+        const header = headerContainer.querySelector('.my-header');
+        const scrollArrow = header.querySelector('.scroll-down-arrow');
+
+        if (scrollArrow) {
+          scrollArrow.addEventListener('click', () => {
+            // Mueve el scroll justo después del header
+            const headerHeight = header.offsetHeight;
+            window.scrollTo({
+              top: headerHeight,
+              behavior: 'smooth'
+            });
+          });
+        }
+      })
+      .catch(e => console.error('Error loading my-header:', e));
+  </script>
+  <script type="module" src="/scripts/header-index.js"></script>
+  <script type="module" src="/scripts/index.js"></script>
+
+</body>
+
+</html>

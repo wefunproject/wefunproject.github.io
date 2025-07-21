@@ -1,0 +1,41 @@
+.colaboradores-list {
+    list-style: none;
+    margin-top: 0rem;
+    /* Reducimos el espacio superior */
+    margin-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    /* Más margen izquierdo para indentación */
+    max-width: 720px;
+    color: #4b5563;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.75;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.colaboradores-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    /* Padding left mayor para que no choque con bullet */
+    padding-left: 1.5rem;
+}
+
+.colaboradores-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    /* Movemos el bullet un poco más a la derecha */
+    top: 0.8em;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #287271;
+}
+
+#aqui:link,
+#aqui:visited,
+#aqui:hover,
+#aqui:active {
+    color: #4b5563;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}

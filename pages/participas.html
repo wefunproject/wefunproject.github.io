@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/participas.css" />
+
+  <!-- Carga dinámica del bloque común del <head> -->
+  <script type="module">
+    fetch('/components/head-common.html')
+      .then(res => res.text())
+      .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        Array.from(temp.children).forEach(el => {
+          document.head.appendChild(el);
+        });
+      });
+  </script>
+</head>
+
+<body>
+
+  <div id="my-header-container"></div>
+
+  <main>
+    <h2 id="next_essays" class="section-title"></h2>
+    <p id="interesa_p2" class="section-text"></p>
+
+    <section class="city-section">
+      <h3 class="criteria-title">Madrid</h3>
+      <ul class="city-list">
+        <li id="madrid_l1"></li>
+        <li id="madrid_l2"></li>
+        <li id="madrid_l3"></li>
+        <li id="madrid_l4"></li>
+      </ul>
+    </section>
+
+    <section class="city-section">
+      <h3 class="criteria-title">Alicante</h3>
+      <ul class="city-list">
+        <li>
+          ...
+        </li>
+        <li>
+          ...
+        </li>
+        <li>
+          ...
+        </li>
+      </ul>
+    </section>
+
+    <h2 class="section-title" id="interesa"></h2>
+    <p id="interesa-p1" class="section-text"></p>
+    <section class="criteria-and-image-container">
+      <div class="criteria-wrapper">
+        <section class="criteria-section inclusion">
+          <h3 id="criterios_inclusion" class="criteria-title"></h3>
+          <ul class="criteria-list">
+            <li id="l1_inclusion"></li>
+            <li id="l2_inclusion"></li>
+            <li id="l3_inclusion"></li>
+            <li id="l4_inclusion"></li>
+          </ul>
+        </section>
+
+        <section class="criteria-section exclusion">
+          <h3 id="criterios_exclusion" class="criteria-title"></h3>
+          <ul class="criteria-list exclusion">
+            <li id="l1_exclusion"></li>
+            <li id="l2_exclusion"></li>
+            <li id="l3_exclusion"></li>
+            <li id="l4_exclusion"></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="project-diffusion-image">
+        <img src="../images/difusion.png" alt="Imagen de difusión del proyecto" />
+      </div>
+    </section>
+
+    <div id="image-modal" class="modal">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <img class="modal-content" id="modal-img" alt="Imagen ampliada" />
+    </div>
+  </main>
+
+  <div id="my-footer-container"></div>
+
+  <script src="../scripts/common.js"></script>
+  <script src="../scripts/participas.js"></script>
+</body>
+
+</html>

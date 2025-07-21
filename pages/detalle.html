@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/detalle.css" />
+
+    <!-- Carga dinámica del bloque común del <head> -->
+    <script type="module">
+        fetch('/components/head-common.html')
+            .then(res => res.text())
+            .then(html => {
+                const temp = document.createElement('div');
+                temp.innerHTML = html;
+                Array.from(temp.children).forEach(el => {
+                    document.head.appendChild(el);
+                });
+            });
+    </script>
+</head>
+
+<body>
+    <div id="my-header-container"></div>
+
+    <main id="main-content">
+        <article id="publication-detail">
+            <h2 id="title"></h2>
+            <img id="detail-image" class="news-image" alt="Imagen de la publicación" />
+            <p class="author" id="author"></p>
+            <span class="date" id="date"></span>
+            <p id="description"></p>
+            <a id="btn-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-link"
+                style="display:none;"></a>
+        </article>
+
+        <hr class="separator-line" />
+
+        <section id="comments-section">
+            <h3 id="comments_title"></h3>
+            <div id="comments-container"></div>
+
+            <hr class="separator-line" />
+
+            <form id="comment-form" class="comment-form">
+                <h3 id="input_comment_title"></h3>
+                <input type="text" id="author-input" name="author" required />
+                <textarea id="content-input" name="content" required></textarea>
+                <span id="form-error" style="color:red; font-size:0.9em; display:none;"></span>
+                <button id="send_comment" type="submit"></button>
+            </form>
+        </section>
+        <button id="back" onclick="window.history.back()" class="btn-back"></button>
+    </main>
+
+    <div id="confirm-modal" class="modal oculto">
+        <div class="modal-content">
+            <h2 id="confirm-title" style="margin-top: 0; text-align: center;"></h2>
+            <p id="confirm-message"></p>
+            <div class="modal-buttons" style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+                <button id="confirm-yes" class="btn-confirm"></button>
+                <button id="confirm-no" class="btn-cancel"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación de envío exitoso -->
+    <div id="success-modal" class="modal oculto">
+        <div class="modal-content">
+            <h3 id="success-title"></h3>
+            <p id="success-message"></p>
+            <button id="success-ok"></button>
+        </div>
+    </div>
+
+    <!-- Modal de error -->
+    <div id="error-modal" class="modal oculto">
+        <div class="modal-content">
+            <h3 id="error-title"></h3>
+            <p id="error-message"></p>
+            <button id="error-ok"></button>
+        </div>
+    </div>
+
+
+    <div id="my-footer-container"></div>
+
+    <script type="module" src="../scripts/detalle.js"></script>
+    <script type="module" src="../scripts/common.js"></script>
+</body>
+
+</html>

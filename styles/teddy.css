@@ -1,0 +1,159 @@
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Imagen dentro del contenedor */
+.image-gallery img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Efecto hover */
+.image-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Imagen ampliada en el modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #000;
+}
+
+/* Pie de imagen */
+#modal-caption {
+    margin: auto;
+    display: block;
+    width: 90vw;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1rem;
+}
+
+/* Botón de cierre */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #bbb;
+}
+
+/* Espaciado más reducido entre párrafos */
+.section-text {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.autores-list {
+    list-style-type: disc;
+    /* padding-left: 0.5rem; */
+    /* max-width: 600px; */
+    margin: 0.5rem auto 2.5rem;
+    color: #4b5563;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.75;
+}
+
+.autores-list li {
+    margin-bottom: 0.6rem;
+}
+
+.section-list {
+    list-style-type: disc;
+    /* padding-left: 1.5rem;
+    max-width: 600px; */
+    margin: 0 auto 2.5rem;
+    color: #4b5563;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.75;
+}
+
+.section-list li {
+    margin-bottom: 0.5rem;
+}
+
+.section-list li a,
+.section-text a {
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.section-list li a:hover,
+.section-text a:hover,
+.section-list li a:focus,
+.section-text a:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+.section-list li a:active,
+.section-text a:active {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.info-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* max-width: 720px; */
+    margin: 0rem auto 2.5rem;
+}
+
+
+.info-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #0e7c86;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.info-button:hover {
+    background-color: #095f66;
+}

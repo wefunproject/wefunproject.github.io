@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/wefun.css" />
+
+    <!-- Carga dinámica del bloque común del <head> -->
+    <script type="module">
+        fetch('/components/head-common.html')
+            .then(res => res.text())
+            .then(html => {
+                const temp = document.createElement('div');
+                temp.innerHTML = html;
+                Array.from(temp.children).forEach(el => {
+                    document.head.appendChild(el);
+                });
+            });
+    </script>
+</head>
+
+<body>
+
+    <!-- Contenedor del encabezado -->
+    <div id="my-header-container"></div>
+
+    <!-- Contenido principal -->
+    <main>
+        <h2 class="section-title" id="title_description1"></h2>
+        <p class="section-text" id="txt_description1"></p>
+
+        <img src="../images/proyect.png" />
+
+        <p class="section-text" id="help_description"></p>
+
+        <h2 class="section-title" id="title_description2"></h2>
+        <p class="section-text" id="txt_description2"></p>
+        <p class="section-text" id="txt_description2_2"></p>
+        <h2 class="section-title" id="hacemos"></h2>
+        <p id="hacemos_1" class="section-text"></p>
+
+        <p id="hacemos_2" class="section-text"></p>
+        <ul class="evaluation-list">
+            <li id="hacemos_2_1">PRE: justo antes del periodo de intervención</li>
+            <li id="hacemos_2_2">POST: inmediatamente después del periodo de intervención</li>
+            <li id="hacemos_2_3">FOLLOW UP: un mes después del final del periodo de intervención</li>
+        </ul>
+
+
+        <p id="hacemos_3" class="section-text">
+            Una vez finalizadas las tres fases, se obtienen una serie de variables o datos que nos permiten analizar los
+            resultados del periodo de intervención. Además, también obtenemos datos y variables del propio periodo de
+            intervención.
+        </p>
+
+        <div class="image-gallery">
+            <img src="../images/wefun_children_ucp.png" alt="">
+        </div>
+
+    </main>
+
+    <!-- Contenedor del pie de página -->
+    <div id="my-footer-container"></div>
+
+    <!-- Script principal -->
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/wefun.js"></script>
+
+    <!-- Modal para imagen ampliada -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img" alt="">
+        <div id="modal-caption"></div>
+    </div>
+
+</body>
+
+</html>

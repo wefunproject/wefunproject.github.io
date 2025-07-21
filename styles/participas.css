@@ -1,0 +1,282 @@
+/* === Estilos específicos para interesa.html === */
+
+/* Sección de criterios */
+.criteria-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 1.75rem;
+    border-left: 5px solid;
+    /* dejamos el ancho fijo */
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Borde verde para inclusión */
+.criteria-section.inclusion {
+    border-color: #10b981;
+    /* verde */
+    background-color: rgba(0, 255, 170, 0.1);
+    /* verde muy suave */
+}
+
+.criteria-section.exclusion {
+    border-color: #ef4444;
+    /* rojo */
+    background-color: rgba(255, 0, 0, 0.1);
+    /* rojo muy suave */
+}
+
+
+
+/* Títulos de sección (inclusión/exclusión) */
+.criteria-title {
+    font-size: 1.4rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Lista de criterios */
+.criteria-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.criteria-list li {
+    position: relative;
+    padding-left: 1.8em;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #374151;
+}
+
+/* Icono para cada ítem de inclusión */
+.criteria-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    color: #10b981;
+    /* verde */
+    font-size: 1.1rem;
+}
+
+/* Icono diferente para exclusión */
+.criteria-list.exclusion li::before {
+    content: "✖";
+    color: #ef4444;
+    /* rojo */
+}
+
+/* Responsive: espaciado menor en pantallas pequeñas */
+@media (max-width: 600px) {
+    .criteria-section {
+        padding: 1rem 1.25rem;
+    }
+
+    .criteria-title {
+        font-size: 1.25rem;
+    }
+
+    .criteria-list li {
+        font-size: 1rem;
+    }
+}
+
+/* === Secciones por ciudad === */
+.city-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem 1.75rem;
+    border-left: 4px solid #2563eb;
+    /* azul más intenso */
+    background-color: #eef2ff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.city-section .section-text {
+    margin-top: 0.75rem;
+    text-align: justify;
+}
+
+.city-list {
+    margin: 1rem 0 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    color: #374151;
+    /* gris oscuro elegante */
+}
+
+.city-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.city-list li strong {
+    color: #1e40af;
+    /* azul para énfasis */
+}
+
+.city-list li em {
+    font-style: italic;
+    color: #6b7280;
+    /* gris suave */
+}
+
+/* Contenedor flex para criterios + imagen */
+.criteria-and-image-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.criteria-wrapper {
+    flex: 1 1 50%;
+    /* que ocupe aproximadamente 65% */
+    max-width: 50%;
+}
+
+.project-diffusion-image {
+    flex: 0 0 50%;
+    /* ancho fijo del 30% */
+    max-width: 50%;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.project-diffusion-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* En móviles que el contenedor se apile */
+@media (max-width: 700px) {
+    .criteria-and-image-container {
+        flex-direction: column;
+    }
+
+    .project-diffusion-image {
+        max-width: 100%;
+        flex-basis: auto;
+        margin: 1rem 0 0 0;
+    }
+
+    .criteria-wrapper {
+        max-width: 100%;
+    }
+}
+
+
+/* Adaptar la imagen para que se ajuste en este layout */
+.project-diffusion-image {
+    max-width: 320px;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+/* La imagen en sí */
+.project-diffusion-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Modal (pantalla completa, fondo oscuro) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.modal-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Media query para móviles: diseño vertical */
+@media (max-width: 700px) {
+    .criteria-and-image-container {
+        flex-direction: column;
+    }
+
+    .project-diffusion-image {
+        max-width: 100%;
+        margin: 1rem 0 0 0;
+    }
+}
+
+/* Media query para móviles: diseño vertical para criterios */
+@media (max-width: 600px) {
+    .criteria-section {
+        padding: 1rem 1.25rem;
+    }
+
+    .criteria-title {
+        font-size: 1.25rem;
+    }
+
+    .criteria-list li {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes anteriores para project-diffusion-image */
+.project-diffusion-image {
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.project-diffusion-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.custom-link {
+    color: #1e40af;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.custom-link:hover {
+    text-decoration: underline;
+    color: #2563eb;
+}

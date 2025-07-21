@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/terminos.css" />
+
+  <!-- Carga dinámica del bloque común del <head> -->
+  <script type="module">
+    fetch('/components/head-common.html')
+      .then(res => res.text())
+      .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        Array.from(temp.children).forEach(el => {
+          document.head.appendChild(el);
+        });
+      });
+  </script>
+</head>
+
+<body>
+
+  <div id="my-header-container"></div>
+
+  <main>
+    <h2 class="section-title" id="terminos_title">Términos de uso</h2>
+    <p id="last_updated_terminos" class="last-updated">Última actualización: 20 de junio de 2025</p>
+
+    <section>
+      <h3 id="terminos_1">1. Uso adecuado</h3>
+      <p id="terminos_1_1">Los comentarios deben utilizarse de forma respetuosa y constructiva. No está permitido:</p>
+      <ul>
+        <li id="terminos_1_2">Publicar contenido ofensivo, violento, discriminatorio o ilegal.</li>
+        <li id="terminos_1_3">Suplantar a otra persona.</li>
+        <li id="terminos_1_4">Publicar spam, enlaces maliciosos o con fines promocionales.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 id="terminos_2">2. Moderación</h3>
+      <p id="terminos_2_1">Nos reservamos el derecho a:</p>
+      <ul>
+        <li id="terminos_2_2">Eliminar comentarios que incumplan estas normas o se consideren inapropiados.</li>
+        <li id="terminos_2_3">Bloquear el acceso a usuarios que abusen del sistema de comentarios.</li>
+        <li id="terminos_2_4">No revisar previamente todos los comentarios antes de su publicación.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 id="terminos_3">3. Responsabilidad del contenido</h3>
+      <p id="terminos_3_1">
+        Cada usuario es responsable del contenido que publica. Esta web no se hace responsable de las opiniones
+        expresadas por los usuarios en los comentarios.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="terminos_4">4. Disponibilidad del servicio</h3>
+      <p id="terminos_4_1">
+        El sistema de comentarios puede ser modificado, suspendido o eliminado en cualquier momento sin previo aviso.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="terminos_5">5. Cambios en los términos</h3>
+      <p id="terminos_5_1">
+        Podemos actualizar estos términos en cualquier momento. Se recomienda revisarlos periódicamente para estar al
+        tanto de los cambios.
+      </p>
+    </section>
+  </main>
+
+  <div id="my-footer-container"></div>
+
+  <script src="../scripts/common.js"></script>
+  <script type="module" src="../scripts/terminos.js"></script>
+</body>
+
+</html>
