@@ -19,6 +19,8 @@ function traducirContenido(translations) {
     'madrid_l2': 'madrid_l2',
     'madrid_l3': 'madrid_l3',
     'madrid_l4': 'madrid_l4',
+    'alicante_l1': 'alicante_l1',
+    'alicante_l2': 'alicante_l2', 
   };
 
   Object.entries(elementos).forEach(([id, key]) => {

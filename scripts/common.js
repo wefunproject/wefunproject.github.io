@@ -56,16 +56,25 @@ function fetchTranslations(lang) {
 }
 
 function cargarHeaderYFooter() {
-  const headerPromise = fetch('/components/my-header.html')
+  const pathname = window.location.pathname;
+  const esIndex = pathname.endsWith('index.html') || pathname === '/';
+
+  const headerUrl = esIndex
+    ? '/components/header-index.html'
+    : '/components/my-header.html';
+
+  const headerPromise = fetch(headerUrl)
     .then(response => response.text())
     .then(data => {
       document.getElementById('my-header-container').innerHTML = data;
 
+      // Esperar al siguiente frame de renderizado para asegurarse de que los elementos existen
+      return new Promise(resolve => requestAnimationFrame(resolve));
+    })
+    .then(() => {
       // Soporte para múltiples variantes del botón de menú (por ID o clase)
       const botonesMenu = document.querySelectorAll('#menu-toggle, #menu-toggle-index');
       const menu = document.querySelector('.my-header__menu');
-
-      console.log("Botones de menú encontrados:", botonesMenu);
 
       botonesMenu.forEach(boton => {
         boton.addEventListener('click', () => {
@@ -105,7 +114,6 @@ function cargarHeaderYFooter() {
 
   return Promise.all([headerPromise, footerPromise]);
 }
-
 
 
 // Inicializar carga

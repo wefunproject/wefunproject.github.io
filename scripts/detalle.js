@@ -180,7 +180,7 @@ async function loadPublication(id) {
     let dateObj = data.date && data.date.toDate ? data.date.toDate() : new Date(data.date);
     dateEl.textContent = dateObj.toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' });
 
-    descriptionEl.textContent = data.description || '';
+    descriptionEl.innerHTML = data.description || '';
 
     if (data.btn_txt && data.btn_url) {
         btnLinkEl.href = data.btn_url;

@@ -173,7 +173,7 @@ function renderPublications(postsList) {
     if (descText.length > 255) {
       descText = descText.slice(0, 255) + '…';
     }
-    description.textContent = descText;
+    description.innerHTML = descText;
 
     // ⬇️ Imagen opcional
     if (post.img) {

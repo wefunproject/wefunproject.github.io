@@ -1,12 +1,23 @@
 const traduccionesYcpem = {
-
+    "ycpem": "ycpem",
+    "autores": "autores",
+    "enlaces-interes": "enlaces-interes",
+    "otros-proyectos": "otros-proyectos",
+    "ir-teddy": "ir-teddy",
+    "ir-satco": "ir-satco",
+    "ycpem-1": "ycpem-1",
+    "ycpem-2": "ycpem-2",
+    "ycpem-3": "ycpem-3",
+    "ycpem-4": "ycpem-4",
+    "ycpem-video-link": "ycpem-video-link",
+    "universidad-mcmaster-link": "universidad-mcmaster-link",
 };
 
-function traducirColaboradores(translations) {
+function traducirYcpem(translations) {
     for (const [id, key] of Object.entries(traduccionesYcpem)) {
         const el = document.getElementById(id);
         if (el && translations[key]) {
-            el.textContent = translations[key];
+            el.innerHTML = translations[key]; // Permite etiquetas HTML
         }
     }
 }
@@ -21,8 +32,6 @@ async function fetchTraducciones(lang) {
         return await fallback.json();
     }
 }
-
-// ../scripts/yc-pem.js
 
 // Esperamos a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
@@ -91,6 +100,6 @@ async function detectarIdioma() {
 (async () => {
     const lang = await detectarIdioma();
     const traducciones = await fetchTraducciones(lang);
-    traducirColaboradores(traducciones);
+    traducirYcpem(traducciones);
     document.body.style.visibility = 'visible';
 })();

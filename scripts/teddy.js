@@ -1,12 +1,25 @@
 const traduccionesTeddy = {
-
+    "teddy": "teddy",
+    "autores": "autores",
+    "enlaces-interes": "enlaces-interes",
+    "otros-proyectos": "otros-proyectos",
+    "ir-ycpem": "ir-ycpem",
+    "ir-satco": "ir-satco",
+    "teddy-1": "teddy-1",
+    "teddy-2": "teddy-2",
+    "teddy-3": "teddy-3",
+    "teddy-4": "teddy-4",
+    "teddy-5": "teddy-5",
+    "teddy-6": "teddy-6",
+    "teddy-7": "teddy-7",
+    "ruc-link": "ruc-link",
 };
 
-function traducirColaboradores(translations) {
+function traducirTeddy(translations) {
     for (const [id, key] of Object.entries(traduccionesTeddy)) {
         const el = document.getElementById(id);
         if (el && translations[key]) {
-            el.textContent = translations[key];
+            el.innerHTML = translations[key]; // Permite etiquetas HTML
         }
     }
 }
@@ -21,8 +34,6 @@ async function fetchTraducciones(lang) {
         return await fallback.json();
     }
 }
-
-// ../scripts/yc-pem.js
 
 // Esperamos a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
@@ -91,6 +102,6 @@ async function detectarIdioma() {
 (async () => {
     const lang = await detectarIdioma();
     const traducciones = await fetchTraducciones(lang);
-    traducirColaboradores(traducciones);
+    traducirTeddy(traducciones);
     document.body.style.visibility = 'visible';
 })();

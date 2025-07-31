@@ -58,30 +58,6 @@
 
   <script src="/scripts/common.js"></script>
 
-  <script type="module">
-    // Carga del header y luego asignación de evento al scroll arrow
-    fetch('/components/header-index.html')
-      .then(res => res.text())
-      .then(html => {
-        const headerContainer = document.getElementById('my-header-container');
-        headerContainer.innerHTML = html;
-
-        const header = headerContainer.querySelector('.my-header');
-        const scrollArrow = header.querySelector('.scroll-down-arrow');
-
-        if (scrollArrow) {
-          scrollArrow.addEventListener('click', () => {
-            // Mueve el scroll justo después del header
-            const headerHeight = header.offsetHeight;
-            window.scrollTo({
-              top: headerHeight,
-              behavior: 'smooth'
-            });
-          });
-        }
-      })
-      .catch(e => console.error('Error loading my-header:', e));
-  </script>
   <script type="module" src="/scripts/header-index.js"></script>
   <script type="module" src="/scripts/index.js"></script>
 

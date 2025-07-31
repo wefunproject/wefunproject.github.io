@@ -1,16 +1,36 @@
+/* Contenedor de todos los proyectos */
+.proyectos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    align-items: stretch;
+    /* Alinea todas las tarjetas con la misma altura */
+}
+
+/* Estilos de cada tarjeta de proyecto */
 .proyecto-section {
     background-color: #fff;
     border-radius: 14px;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    margin: 2.5rem auto;
-    /* max-width: 900px; */
     padding: 1.5rem 2rem;
     cursor: pointer;
     transition: box-shadow 0.3s ease, transform 0.2s ease;
     user-select: none;
     outline-offset: 4px;
+
+    flex: 1 1 300px;
+    max-width: 400px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+/* Hover y focus */
 .proyecto-section:hover,
 .proyecto-section:focus {
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
@@ -22,6 +42,7 @@
     outline: 3px solid #5b9dd9;
 }
 
+/* Título del proyecto */
 .proyecto-section .section-title {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -29,27 +50,31 @@
     font-size: clamp(1.6rem, 3vw, 2rem);
 }
 
+/* Texto del proyecto */
 .proyecto-section .section-text {
     color: #4b5563;
     line-height: 1.7;
     font-size: clamp(1rem, 2.5vw, 1.15rem);
     text-align: justify;
-    /* max-width: 720px; */
+    margin-bottom: auto;
+    /* Empuja la imagen hacia abajo */
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.5rem;
 }
 
+/* Contenedor de imagen */
 .proyecto-section .image-gallery {
     display: flex;
     justify-content: center;
+    margin-top: 1.5rem;
 }
 
+/* Imagen */
 .proyecto-section .image-gallery img {
-    max-width: 400px;
+    height: 200px;
+    /* Puedes ajustar el valor */
+    object-fit: cover;
     width: 100%;
-    height: auto;
     border-radius: 10px;
     box-shadow: none;
-
 }

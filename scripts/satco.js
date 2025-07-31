@@ -1,12 +1,21 @@
 const traduccionesSatco = {
-
+    "satco": "satco",
+    "autores": "autores",
+    "enlaces-interes": "enlaces-interes",
+    "otros-proyectos": "otros-proyectos",
+    "ir-ycpem": "ir-ycpem",
+    "ir-satco": "ir-satco",
+    "satco-1": "satco-1",
+    "satco-2": "satco-2",
+    "satco-3": "satco-3",
+    "ruc-link": "ruc-link",
 };
 
-function traducirColaboradores(translations) {
+function traducirSatco(translations) {
     for (const [id, key] of Object.entries(traduccionesSatco)) {
         const el = document.getElementById(id);
         if (el && translations[key]) {
-            el.textContent = translations[key];
+            el.innerHTML = translations[key];
         }
     }
 }
@@ -91,6 +100,6 @@ async function detectarIdioma() {
 (async () => {
     const lang = await detectarIdioma();
     const traducciones = await fetchTraducciones(lang);
-    traducirColaboradores(traducciones);
+    traducirSatco(traducciones);
     document.body.style.visibility = 'visible';
 })();

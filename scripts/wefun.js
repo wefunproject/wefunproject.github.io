@@ -11,6 +11,7 @@ function traducirContenidoPrincipal(translations) {
         'hacemos_2_2': 'hacemos_2_2',
         'hacemos_2_3': 'hacemos_2_3',
         'hacemos_3': 'hacemos_3', 
+        'hacemos_4': 'hacemos_4',
     };
 
     Object.entries(elementos).forEach(([id, key]) => {
