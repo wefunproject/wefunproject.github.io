@@ -106,20 +106,6 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-#menu-toggle-index,
-#menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    padding: 5px 10px;
-    position: absolute;
-    top: 25px;
-    right: 20px;
-    z-index: 1001;
-}
 
 /* Scroll down arrow con 2 flechas, centradas, que se mueven solo arriba y abajo */
 .scroll-down-arrow {
@@ -165,67 +151,43 @@
 
 @media (max-width: 900px) {
 
-    /* Ocultar el menú horizontal y mostrar menú móvil */
+    /* Mostrar el menú en horizontal como en pantallas grandes */
     .my-header__menu {
-        display: none;
-        flex-direction: column;
-        background-color: #287271;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        width: 220px;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        padding: 12px 0;
-        z-index: 1000;
-        font-size: 1.1rem;
-        font-weight: 600;
-    }
-
-    .my-header__menu.show {
-        display: flex;
-        animation: fadeInDown 0.3s ease forwards;
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+        font-size: inherit;
+        font-weight: inherit;
     }
 
     .my-header__menu li a {
-        padding: 14px 24px;
-        color: #e0e7ff;
-        text-align: left;
-        transition: background-color 0.25s, color 0.25s;
+        padding: 0 16px;
+        color: inherit;
+        text-align: center;
     }
 
     .my-header__menu li a:hover,
     .my-header__menu li a:focus {
-        background-color: #00c3a3;
-        color: #fff;
-        outline: none;
+        background-color: transparent;
+        color: #00c3a3;
     }
 
     .my-header__menu li:not(:last-child)::after {
+        display: inline-block;
+    }
+
+    /* Ocultar el botón toggle */
+    #menu-toggle-index,
+    #menu-toggle {
         display: none;
     }
 
-    /* Mostrar botón toggle en móvil */
-    #menu-toggle-index,
-    #menu-toggle {
-        display: block;
-        font-size: 2.3rem;
-        padding: 6px 12px;
-        top: 28px;
-        right: 20px;
-        z-index: 1100;
-        user-select: none;
-        transition: color 0.3s ease;
-    }
-
-    #menu-toggle-index:hover,
-    #menu-toggle-index:focus,
-    #menu-toggle:hover,
-    #menu-toggle:focus {
-        color: #ffffff;
-        outline: none;
-    }
-
+    /* Mantener otras propiedades del header */
     .my-header {
         position: relative;
     }
@@ -233,8 +195,10 @@
     .header-img-left,
     .header-img-right {
         display: none;
+        /* Puedes quitar esta línea si quieres mostrar las imágenes también en móvil */
     }
 }
+
 
 @keyframes fadeInDown {
     0% {
