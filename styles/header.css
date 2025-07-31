@@ -115,59 +115,54 @@
 /* Responsive */
 @media (max-width: 900px) {
     .my-header__menu {
-        display: none;
-        flex-direction: column;
-        background-color: #287271;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        width: 220px;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        padding: 12px 0;
-        z-index: 1000;
+        display: flex !important;
+        /* Siempre visible */
+        flex-direction: row;
+        /* Menú horizontal igual que en escritorio */
+        background-color: transparent;
+        /* Sin fondo diferente */
+        position: static;
+        /* Flujo normal */
+        width: auto;
+        box-shadow: none;
+        padding: 0;
+        max-width: 900px;
+        gap: 14px;
         font-size: 1.1rem;
         font-weight: 600;
-    }
-
-    .my-header__menu.show {
-        display: flex;
-        animation: fadeInDown 0.3s ease forwards;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .my-header__menu li a {
-        padding: 14px 24px;
-        color: #e0e7ff;
-        text-align: left;
-        transition: background-color 0.25s, color 0.25s;
+        padding: 8px 14px;
+        color: white;
+        text-align: center;
+        background-color: transparent;
+        transition: background-color 0.3s, color 0.3s;
+        font-weight: 500;
     }
 
     .my-header__menu li a:hover,
     .my-header__menu li a:focus {
-        background-color: #00c3a3;
+        background-color: #00d1b2;
         color: #fff;
         outline: none;
     }
 
     .my-header__menu li:not(:last-child)::after {
-        display: none;
+        content: "";
+        position: absolute;
+        right: -5px;
+        top: 25%;
+        bottom: 25%;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
+    /* Oculta botón toggle siempre */
     #menu-toggle {
-        display: block;
-        font-size: 2.3rem;
-        padding: 6px 12px;
-        top: 28px;
-        right: 20px;
-        z-index: 1100;
-        user-select: none;
-        transition: color 0.3s ease;
-    }
-
-    #menu-toggle:hover,
-    #menu-toggle:focus {
-        color: #ffffff;
-        outline: none;
+        display: none;
     }
 
     .my-header {
