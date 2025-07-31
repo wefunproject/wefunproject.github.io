@@ -5,13 +5,19 @@ fetch('/components/header-index.html')
     .then(html => {
         container.innerHTML = html;
 
-        // ✅ Aquí ya existe el botón en el DOM, ahora sí puedes añadir el event listener
-        const toggleButton = document.getElementById("menu-toggle-index");
-        const menu = document.querySelector(".my-header__menu");
+        // No hay toggle button, menú siempre visible, así que no añadimos toggle
 
-        if (toggleButton && menu) {
-            toggleButton.addEventListener("click", () => {
-                menu.classList.toggle("show");
+        // Listener para la flecha scroll down
+        const header = container.querySelector('.my-header');
+        const scrollArrow = container.querySelector('.scroll-down-arrow');
+
+        if (scrollArrow && header) {
+            scrollArrow.addEventListener('click', () => {
+                const headerHeight = header.offsetHeight;
+                window.scrollTo({
+                    top: headerHeight,
+                    behavior: 'smooth'
+                });
             });
         }
     })
