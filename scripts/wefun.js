@@ -5,12 +5,12 @@ function traducirContenidoPrincipal(translations) {
         'contacto_description': 'contacto_description',
         'help_description': 'help_description',
         'hacemos': 'hacemos',
-        'hacemos_1': 'hacemos_1',  
-        'hacemos_2': 'hacemos_2',  
+        'hacemos_1': 'hacemos_1',
+        'hacemos_2': 'hacemos_2',
         'hacemos_2_1': 'hacemos_2_1',
         'hacemos_2_2': 'hacemos_2_2',
         'hacemos_2_3': 'hacemos_2_3',
-        'hacemos_3': 'hacemos_3', 
+        'hacemos_3': 'hacemos_3',
         'hacemos_4': 'hacemos_4',
     };
 
@@ -49,8 +49,7 @@ function reloadContenidoPrincipal(lang) {
 
 // Esperamos a que DOM esté listo
 window.addEventListener('DOMContentLoaded', () => {
-    cargarHeaderYFooter()
-        .then(() => reloadContenidoPrincipal())
+    reloadContenidoPrincipal()
         .then(() => {
             document.body.style.visibility = 'visible';
         })
@@ -64,9 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
 window.reloadContenidoPrincipal = reloadContenidoPrincipal;
 window.setLanguage = function (lang) {
     console.log(`Cambiando idioma a: ${lang}`);
-    cargarHeaderYFooter()
-        .then(() => reloadContenidoPrincipal(lang))
-        .catch(console.error);
+    reloadContenidoPrincipal(lang).catch(console.error);
 };
 
 

@@ -20,7 +20,7 @@ function traducirContenido(translations) {
     'madrid_l3': 'madrid_l3',
     'madrid_l4': 'madrid_l4',
     'alicante_l1': 'alicante_l1',
-    'alicante_l2': 'alicante_l2', 
+    'alicante_l2': 'alicante_l2',
   };
 
   Object.entries(elementos).forEach(([id, key]) => {
@@ -34,7 +34,6 @@ function traducirContenido(translations) {
     }
   });
 }
-
 
 function fetchContenidoTranslations(lang) {
   return fetch(`../locales/${lang}.json`)
@@ -59,8 +58,7 @@ function reloadContenidoInteresa(lang) {
 
 // Esperar a DOM listo
 window.addEventListener('DOMContentLoaded', () => {
-  cargarHeaderYFooter()
-    .then(() => reloadContenidoInteresa())
+  reloadContenidoInteresa()
     .then(() => {
       document.body.style.visibility = 'visible';
     })
@@ -68,6 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
       console.error("Error en la carga inicial:", err);
       document.body.style.visibility = 'visible';
     });
+
   // Código para modal imagen difusión
   const diffusionImg = document.querySelector('.project-diffusion-image img');
   if (!diffusionImg) return;
@@ -95,7 +94,5 @@ window.addEventListener('DOMContentLoaded', () => {
 // Exponer globalmente para recargar tras cambio idioma
 window.reloadContenidoInteresa = reloadContenidoInteresa;
 window.setLanguage = function (lang) {
-  cargarHeaderYFooter()
-    .then(() => reloadContenidoInteresa(lang))
-    .catch(console.error);
+  reloadContenidoInteresa(lang).catch(console.error);
 };

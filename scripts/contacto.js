@@ -38,8 +38,7 @@ function reloadContenidoContacto(lang) {
 
 // Esperar a DOM listo
 window.addEventListener('DOMContentLoaded', () => {
-  cargarHeaderYFooter()
-    .then(() => reloadContenidoContacto())
+  reloadContenidoContacto()
     .then(() => {
       document.body.style.visibility = 'visible';
     })
@@ -52,7 +51,5 @@ window.addEventListener('DOMContentLoaded', () => {
 // Exponer globalmente para recargar tras cambio idioma sin almacenar
 window.reloadContenidoContacto = reloadContenidoContacto;
 window.setLanguage = function (lang) {
-  cargarHeaderYFooter()
-    .then(() => reloadContenidoContacto(lang))
-    .catch(console.error);
+  reloadContenidoContacto(lang).catch(console.error);
 };

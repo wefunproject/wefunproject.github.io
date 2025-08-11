@@ -34,12 +34,8 @@ async function fetchTraducciones(lang) {
 // Esperamos a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
     const imageGallery = document.querySelector('.image-gallery img');
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-img');
-    const modalCaption = document.getElementById('modal-caption');
-    const modalClose = document.querySelector('.modal-close');
 
-    if (!imageGallery || !modal || !modalImg || !modalCaption || !modalClose) {
+    if (!imageGallery) {
         console.warn('Elementos del modal no encontrados');
         return;
     }
@@ -53,28 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         modalCaption.textContent = imageGallery.alt || '';
         // Para evitar scroll mientras modal está abierto
         document.body.style.overflow = 'hidden';
-    });
-
-    // Cerrar modal al clicar la X
-    modalClose.addEventListener('click', () => {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-    });
-
-    // Cerrar modal al clicar fuera de la imagen (en el fondo)
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-        }
-    });
-
-    // Opcional: cerrar modal con tecla Escape
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-        }
     });
 });
 
