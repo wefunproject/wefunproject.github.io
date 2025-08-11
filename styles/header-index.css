@@ -1,10 +1,7 @@
 .my-header {
     height: 100vh;
     box-sizing: border-box;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,16 +12,13 @@
     overflow: hidden;
 }
 
+/* Título e imágenes */
 .my-header__title {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
 }
-
-/* .header-logo {
-    cursor: default !important;
-} */
 
 .my-header__title img {
     max-height: 90px;
@@ -36,7 +30,6 @@
 .header-img-left,
 .header-img-right {
     max-height: 80px;
-    cursor: default;
     pointer-events: none;
 }
 
@@ -48,6 +41,7 @@
     margin-left: 100px;
 }
 
+/* Descripción */
 #project-description {
     font-size: 1.25rem;
     font-weight: 400;
@@ -57,6 +51,23 @@
     line-height: 1.4;
 }
 
+/* Botón menú (solo visible en móvil) */
+#menu-toggle {
+    display: none;
+    /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    z-index: 1001;
+}
+
+/* Navegación */
 .my-header__nav {
     margin-top: 15px;
     padding-top: 10px;
@@ -64,7 +75,6 @@
     z-index: 20;
 }
 
-/* Menú común para ambos headers: UL con clase my-header__menu */
 .my-header__menu {
     list-style: none;
     padding: 0;
@@ -106,11 +116,10 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-
-/* Scroll down arrow con 2 flechas, centradas, que se mueven solo arriba y abajo */
+/* Flecha scroll */
 .scroll-down-arrow {
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -149,56 +158,57 @@
     }
 }
 
+/* Responsive */
 @media (max-width: 900px) {
-
-    /* Mostrar el menú en horizontal como en pantallas grandes */
-    .my-header__menu {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        width: auto;
-        padding: 0;
-        box-shadow: none;
-        border-radius: 0;
-        font-size: inherit;
-        font-weight: inherit;
-    }
-
-    .my-header__menu li a {
-        padding: 0 16px;
-        color: inherit;
-        text-align: center;
-    }
-
-    .my-header__menu li a:hover,
-    .my-header__menu li a:focus {
-        background-color: transparent;
-        color: #00c3a3;
-    }
-
-    .my-header__menu li:not(:last-child)::after {
-        display: inline-block;
-    }
-
-    /* Ocultar el botón toggle */
-    #menu-toggle-index,
     #menu-toggle {
+        display: block;
+    }
+
+    /* Oculta menú por defecto */
+    .my-header__nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #287271;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        padding: 10px 20px;
+        width: 200px;
+        z-index: 1000;
+    }
+
+    /* Mostrar menú si activo */
+    .my-header__nav.show {
+        display: block;
+    }
+
+    /* Menú vertical */
+    .my-header__menu {
+        flex-direction: column !important;
+        gap: 10px;
+        justify-content: flex-start;
+        max-width: none;
+    }
+
+    /* Sin separadores verticales */
+    .my-header__menu li:not(:last-child)::after {
         display: none;
     }
 
-    /* Mantener otras propiedades del header */
-    .my-header {
-        position: relative;
+    .my-header__menu li a {
+        padding: 10px 14px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        background-color: transparent;
+        border-radius: 4px;
     }
 
     .header-img-left,
     .header-img-right {
         display: none;
-        /* Puedes quitar esta línea si quieres mostrar las imágenes también en móvil */
     }
 }
-
 
 @keyframes fadeInDown {
     0% {

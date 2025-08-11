@@ -1,26 +1,30 @@
-const container = document.getElementById('my-header-container');
+document.addEventListener('DOMContentLoaded', () => {
 
-fetch('/components/header-index.html')
-    .then(res => res.text())
-    .then(html => {
-        container.innerHTML = html;
+    const container = document.getElementById('my-header-container');
 
-        // No hay toggle button, menú siempre visible, así que no añadimos toggle
+    fetch('/components/header-index.html')
+        .then(res => res.text())
+        .then(html => {
+            container.innerHTML = html;
 
-        // Listener para la flecha scroll down
-        const header = container.querySelector('.my-header');
-        const scrollArrow = container.querySelector('.scroll-down-arrow');
+            // No hay toggle button, menú siempre visible, así que no añadimos toggle
 
-        if (scrollArrow && header) {
-            scrollArrow.addEventListener('click', () => {
-                const headerHeight = header.offsetHeight;
-                window.scrollTo({
-                    top: headerHeight,
-                    behavior: 'smooth'
+            // Listener para la flecha scroll down
+            const header = container.querySelector('.my-header');
+            const scrollArrow = container.querySelector('.scroll-down-arrow');
+
+            if (scrollArrow && header) {
+                console.log("Flecha de scroll down encontrada, añadiendo listener");
+                scrollArrow.addEventListener('click', () => {
+                    const headerHeight = header.offsetHeight;
+                    window.scrollTo({
+                        top: headerHeight,
+                        behavior: 'smooth'
+                    });
                 });
-            });
-        }
-    })
-    .catch(err => {
-        console.error("Error al cargar el header:", err);
-    });
+            }
+        })
+        .catch(err => {
+            console.error("Error al cargar el header:", err);
+        });
+});

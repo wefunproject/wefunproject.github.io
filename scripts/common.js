@@ -64,36 +64,38 @@ function cargarHeaderYFooter() {
     : '/components/my-header.html';
 
   console.log("Cargando header desde:", headerUrl);
+
   const headerPromise = fetch(headerUrl)
     .then(response => response.text())
     .then(data => {
       document.getElementById('my-header-container').innerHTML = data;
 
-      // Esperar al siguiente frame de renderizado para asegurarse de que los elementos existen
+      // Esperar al siguiente frame para que el DOM se actualice
       return new Promise(resolve => requestAnimationFrame(resolve));
     })
     .then(() => {
-      // Soporte para múltiples variantes del botón de menú (por ID o clase)
-      const botonesMenu = document.querySelectorAll('#menu-toggle, #menu-toggle-index');
-      const menu = document.querySelector('.my-header__menu');
+      const botonMenu = document.getElementById('menu-toggle');
+      const menu = document.querySelector('.my-header__nav');
 
-      botonesMenu.forEach(boton => {
-        boton.addEventListener('click', () => {
+      if (botonMenu && menu) {
+        botonMenu.addEventListener('click', () => {
+          console.log('Botón de menú clickeado');
           const isShown = menu.classList.toggle('show');
-          boton.setAttribute('aria-expanded', isShown);
+          botonMenu.setAttribute('aria-expanded', isShown ? 'true' : 'false');
         });
-      });
 
-      // Cierre del menú al hacer clic fuera
-      document.addEventListener('click', (event) => {
-        const clickEnAlgúnBoton = Array.from(botonesMenu).some(b => b.contains(event.target));
-        const clickEnMenu = menu.contains(event.target);
+        document.addEventListener('click', (event) => {
+          const clickEnBoton = botonMenu.contains(event.target);
+          const clickEnMenu = menu.contains(event.target);
 
-        if (menu.classList.contains('show') && !clickEnMenu && !clickEnAlgúnBoton) {
-          menu.classList.remove('show');
-          botonesMenu.forEach(b => b.setAttribute('aria-expanded', 'false'));
-        }
-      });
+          if (menu.classList.contains('show') && !clickEnMenu && !clickEnBoton) {
+            menu.classList.remove('show');
+            botonMenu.setAttribute('aria-expanded', 'false');
+          }
+        });
+      } else {
+        console.warn('No se encontró el botón o el menú para toggle');
+      }
 
       return fetchTranslations(currentLang);
     })
@@ -116,9 +118,10 @@ function cargarHeaderYFooter() {
   return Promise.all([headerPromise, footerPromise]);
 }
 
-
-// Inicializar carga
-cargarHeaderYFooter();
+// Inicializar carga tras el DOM listo
+document.addEventListener('DOMContentLoaded', () => {
+  cargarHeaderYFooter();
+});
 
 // Exponer setLanguage globalmente
 window.setLanguage = setLanguage;
