@@ -119,7 +119,7 @@
 /* Flecha scroll */
 .scroll-down-arrow {
     position: absolute;
-    bottom: 100px;
+    bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
