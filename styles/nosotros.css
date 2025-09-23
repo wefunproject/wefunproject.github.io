@@ -6,7 +6,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  /* max-width: 900px; */
   margin: 0 auto;
 }
 
@@ -14,17 +13,13 @@
   flex: 1 1 150px;
   max-width: 180px;
   display: flex;
-  /* Para centrar la imagen */
   align-items: center;
-  /* Centrado vertical */
   justify-content: center;
-  /* Centrado horizontal */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   background-color: #F1F1F1;
-  /* Fondo para zonas vacías */
 }
 
 .image-gallery a:hover {
@@ -34,9 +29,7 @@
 .image-gallery img {
   max-width: 100%;
   max-height: 120px;
-  /* Altura máxima fija */
   object-fit: contain;
-  /* La imagen se ve completa */
   border-radius: 8px;
   display: block;
 }
@@ -45,29 +38,24 @@
 .image-gallery.two-rows {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* Dos columnas iguales */
   grid-template-rows: auto auto;
   justify-content: center;
   max-width: 720px;
-  /* Igual que .team-card */
   margin: 0 auto;
   gap: 1rem;
 }
 
 .image-gallery.two-rows a:nth-child(1) {
   grid-column: 1 / -1;
-  /* Ocupa las dos columnas (fila completa) */
 }
 
 .image-gallery.two-rows a {
   flex: none;
-  /* Quitar flex-grow para el grid */
   max-width: 100%;
 }
 
 .image-gallery.two-rows img {
   max-height: 180px;
-  /* Altura mayor para imágenes más grandes */
   width: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -75,12 +63,10 @@
 }
 
 /* Team container y tarjetas */
-
 .team-container {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  /* max-width: 720px; */
   margin: 2rem auto;
 }
 
@@ -104,7 +90,6 @@
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  /* Hace la imagen circular */
   flex-shrink: 0;
 }
 
@@ -143,4 +128,52 @@
 
 .team-links a:hover img {
   transform: scale(1.1);
+}
+
+/* ===========================
+   Ajustes responsive para móviles
+   =========================== */
+@media (max-width: 768px) {
+  .team-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.25rem;
+    /* Reducido de 0.5rem */
+  }
+
+  .team-description {
+    font-size: 0.95rem;
+  }
+
+  .team-links {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .team-container {
+    margin: 1rem auto;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .team-description {
+    font-size: 0.9rem;
+  }
+
+  .team-card img {
+    width: 100px;
+    height: 100px;
+    /* margin-bottom: 10rem; */
+  }
 }
