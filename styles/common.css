@@ -1,17 +1,16 @@
 @import url("header.css");
 @import url("footer.css");
 
+/* --- BODY --- */
 body {
   visibility: hidden;
-}
-
-body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f2f2f2;
   color: #333;
 }
 
+/* --- MAIN --- */
 main {
   /* max-width: 900px; */
   /* margin: 3rem auto 4rem; */
@@ -28,6 +27,7 @@ main:hover {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
+/* --- SECTION TITLES & TEXT --- */
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: 700;
@@ -45,4 +45,64 @@ main:hover {
   margin: 2.5rem auto 2.5rem;
   color: #4b5563;
   text-align: justify;
+}
+
+/* --- MOBILE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+    /* menos espacio lateral */
+    box-shadow: none;
+    /* más limpio en móvil */
+  }
+
+  .section-text {
+    text-align: left;
+    /* más legible */
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+  }
+
+  .image-gallery img:hover {
+    transform: scale(1.03);
+    /* sutil efecto de zoom */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-gallery {
+    grid-template-columns: 1fr;
+    /* una imagen por fila */
+  }
+
+  footer {
+    font-size: 0.8rem;
+    /* tipografía más compacta */
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  footer a {
+    margin: 0;
+  }
 }
