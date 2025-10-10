@@ -52,8 +52,10 @@
   "madrid_l2": "<strong>Intervención:</strong> programa domiciliario de 1 mes de duración en el que el niño/a llevará el dispositivo WeFUN watch, adaptado a sus necesidades y basado en un programa de rutinas diarias.",
   "madrid_l3": "<strong>Seguimiento:</strong> realizado por un fisioterapeuta del equipo de investigación.",
   "madrid_l4": "<strong>¿Cómo puedo anotarme?</strong> rellenando el siguiente <a href='https://forms.office.com/e/AB08XshrAF' class='custom-link' target='_blank' rel='noopener noreferrer'>formulario online</a>",
-  "alicante_l1": "Las evaluaciones se realizarán en el Campus de San Juan de la Universidad Miguel Hernández de Elche (Alicante)",
-  "alicante_l2": "Fechas planificadas para noviembre de 2025.",
+  "alicante_l1": "3 evaluaciones de 2 horas de duración <strong>presenciales</strong> en la Universidad Miguel Hernández de Elche (Campus de San Juan). </br><strong>Fechas:</strong> 7–9 de noviembre (inicial), 12–14 de diciembre (post-intervención) y 23–25 de enero (seguimiento).",
+  "alicante_l2": "<strong>Intervención:</strong> programa domiciliario de 1 mes de duración en el que el niño/a llevará el dispositivo WeFUN watch, adaptado a sus necesidades y basado en un programa de rutinas diarias.",
+  "alicante_l3": "<strong>Seguimiento:</strong> realizado por un fisioterapeuta del equipo de investigación.",
+  "alicante_l4": "<strong>¿Cómo puedo anotarme?</strong> rellenando el siguiente <a href='https://forms.office.com/e/WrCxBUKgL8' class='custom-link' target='_blank' rel='noopener noreferrer'>formulario online</a>",
   "hacemos": "¿Qué hacemos?",
   "hacemos_1": "Se ha desarrollado una tecnología de acuerdo a la evidencia científica actual y a las perspectivas de las familias sobre el uso de tecnología en casa, que está siendo probada en un estudio de viabilidad. En este se evalúan niños/as entre tres y ocho años de edad con hemiparesia, se le realizan una serie de evaluaciones en tres momentos diferentes.",
   "hacemos_2_1": "PRE: justo antes del periodo de intervención",
@@ -174,5 +176,11 @@
   "success-ok": "Aceptar",
   "error-title": "Error",
   "error-message": "Ha ocurrido un error.",
-  "error-ok": "Aceptar"
+  "error-ok": "Aceptar",
+  "colaboradores_title2": "Colaboradores",
+  "colaboradores_text": "En esta sección podrás ver diferentes personas y entidades que colaboran o han colaborado con el proyecto WeFUN:",
+  "universidades": "Universidades",
+  "investigadores": "Investigadores",
+  "empresas": "Empresas",
+  "colaboradores_additional": "Si quieres colaborar con nosotros, no dudes en contactarnos. Puedes ver nuestros datos de contacto pulsando <a id='aqui' href='../pages/contacto.html'>aquí</a>."
 }

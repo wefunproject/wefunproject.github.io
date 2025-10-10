@@ -52,8 +52,10 @@
   "madrid_l2": "<strong>Intervention:</strong> a home program lasting 1 month in which the child will wear the WeFUN watch, adapted to their needs and based on a daily routine program.",
   "madrid_l3": "<strong>Follow-up:</strong> conducted by a physiotherapist from the research team.",
   "madrid_l4": "<strong>How can I sign up?</strong> by filling out the following <a href='https://forms.office.com/e/AB08XshrAF' class='custom-link' target='_blank' rel='noopener noreferrer'>online form</a>",
-  "alicante_l1": "Evaluations will be conducted at the San Juan Campus of the Miguel Hernández University of Elche (Alicante)",
-  "alicante_l2": "Planned dates for November 2025.",
+  "alicante_l1": "3 evaluations of 2 hours each <strong>in person</strong> at the University of Alicante. </br><strong>Dates:</strong> October 7–8 (pre-intervention), November 4–5 (post-intervention), and December 9–10 (follow-up).",
+  "alicante_l2": "<strong>Intervention:</strong> a home program lasting 1 month in which the child will wear the WeFUN watch, adapted to their needs and based on a daily routine program.",
+  "alicante_l3": "<strong>Follow-up:</strong> conducted by a physiotherapist from the research team.",
+  "alicante_l4": "<strong>How can I sign up?</strong> by filling out the following <a href='https://forms.office.com/e/WrCxBUKgL8F' class='custom-link' target='_blank' rel='noopener noreferrer'>online form</a>",
   "hacemos": "What do we do?",
   "hacemos_1": "A technology has been developed according to current scientific evidence and family perspectives on the use of technology at home, which is being tested in a feasibility study. In this study, participants are evaluated at three different times.",
   "hacemos_2_1": "PRE: just before the intervention period",
@@ -173,5 +175,11 @@
   "success-ok": "Accept",
   "error-title": "Error",
   "error-message": "An error has occurred.",
-  "error-ok": "Accept"
+  "error-ok": "Accept",
+  "colaboradores_title2": "Collaborators",
+  "colaboradores_text": "In this section, you can see different people and entities which collaborate or have collaborated with the WeFUN project:",
+  "universidades": "Universities",
+  "investigadores": "Researchers",
+  "empresas": "Companies",
+  "colaboradores_additional": "If you would like to collaborate with us, don't hesitate to contact us. You can find our contact details by clicking <a id='aqui' href='../pages/contacto.html'>here</a>."
 }

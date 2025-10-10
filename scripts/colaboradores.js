@@ -1,14 +1,25 @@
 const traduccionesColaboradores = {
   title: "title_colaboradores",
   colaboradores_title: "colaboradores_title",
-  colaboradores_description: "colaboradores_description"
+  colaboradores_description: "colaboradores_description",
+  colaboradores_title2: "colaboradores_title2",
+  colaboradores_text: "colaboradores_text",
+  universidades: "universidades",
+  investigadores: "investigadores",
+  empresas: "empresas",
+  colaboradores_additional: "colaboradores_additional"
 };
 
 function traducirColaboradores(translations) {
   for (const [id, key] of Object.entries(traduccionesColaboradores)) {
     const el = document.getElementById(id);
     if (el && translations[key]) {
-      el.textContent = translations[key];
+      // Si el texto contiene etiquetas HTML, usamos innerHTML
+      if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
+        el.innerHTML = translations[key];
+      } else {
+        el.textContent = translations[key];
+      }
     }
   }
 }

@@ -21,12 +21,15 @@ function traducirContenido(translations) {
     'madrid_l4': 'madrid_l4',
     'alicante_l1': 'alicante_l1',
     'alicante_l2': 'alicante_l2',
+    'alicante_l3': 'alicante_l3',
+    'alicante_l4': 'alicante_l4',
+
   };
 
   Object.entries(elementos).forEach(([id, key]) => {
     const el = document.getElementById(id);
     if (el && translations[key]) {
-      if (id.includes('madrid')) {
+      if (id.includes('madrid') || id.includes('alicante')) {
         el.innerHTML = translations[key]; // contiene etiquetas
       } else {
         el.textContent = translations[key]; // texto plano
