@@ -1,10 +1,10 @@
+/* Galería de imagen principal */
 .image-gallery {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
 }
 
-/* Imagen dentro del contenedor */
 .image-gallery img {
     max-width: 300px;
     width: 100%;
@@ -16,7 +16,6 @@
     cursor: pointer;
 }
 
-/* Efecto hover */
 .image-gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -36,7 +35,6 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Imagen ampliada en el modal */
 .modal-content {
     margin: auto;
     display: block;
@@ -46,7 +44,6 @@
     box-shadow: 0 0 20px #000;
 }
 
-/* Pie de imagen */
 #modal-caption {
     margin: auto;
     display: block;
@@ -58,7 +55,6 @@
     font-size: 1rem;
 }
 
-/* Botón de cierre */
 .modal-close {
     position: absolute;
     top: 20px;
@@ -75,16 +71,15 @@
     color: #bbb;
 }
 
-/* Espaciado más reducido entre párrafos */
+/* Texto y listas */
 .section-text {
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
 }
 
-.autores-list {
+.autores-list,
+.section-list {
     list-style-type: disc;
-    /* padding-left: 0.5rem; */
-    /* max-width: 600px; */
     margin: 0.5rem auto 2.5rem;
     color: #4b5563;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -92,23 +87,9 @@
     line-height: 1.75;
 }
 
-.autores-list li {
-    margin-bottom: 0.6rem;
-}
-
-.section-list {
-    list-style-type: disc;
-    /* padding-left: 1.5rem;
-    max-width: 600px; */
-    margin: 0 auto 2.5rem;
-    color: #4b5563;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
-    line-height: 1.75;
-}
-
+.autores-list li,
 .section-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 .section-list li a,
@@ -138,10 +119,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* max-width: 720px; */
     margin: 0rem auto 2.5rem;
 }
-
 
 .info-button {
     padding: 0.75rem 1.5rem;
@@ -156,4 +135,77 @@
 
 .info-button:hover {
     background-color: #095f66;
+}
+
+/* -----------------------------
+   Estilos para párrafos + imágenes
+--------------------------------*/
+
+/* Contenedor flex general */
+.text-and-images {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Texto */
+.text-block {
+    flex: 2;
+}
+
+/* Imágenes escritorio/portátil */
+.side-images-desktop {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.side-images-desktop img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: default;
+    transition: none;
+}
+
+.side-images-desktop img:hover {
+    transform: none;
+}
+
+/* Imágenes móvil */
+.side-images-mobile {
+    display: none;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+    /* centra las imágenes */
+    flex-wrap: wrap;
+    /* permite que ambas entren si falta espacio */
+}
+
+.side-images-mobile img {
+    width: 47.5%;
+    /* max-width: px; */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: default;
+    transition: none;
+}
+
+/* Responsive: móvil */
+@media (max-width: 768px) {
+    .text-and-images {
+        flex-direction: column;
+    }
+
+    .side-images-desktop {
+        display: none;
+    }
+
+    .side-images-mobile {
+        display: flex;
+    }
 }
