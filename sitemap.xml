@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- index.html -->
+    <url>
+        <loc>https://wefunproject.github.io/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- pages/detalle.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/detalle.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+
+    <!-- pages/wefun.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/wefun.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- pages/proyectos.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/proyectos.html</loc>
+        <changefreq>never</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <!-- pages/teddy.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/teddy.html</loc>
+        <changefreq>never</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <!-- pages/yc-pem.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/yc-pem.html</loc>
+        <changefreq>never</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <!-- pages/satco.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/satco.html</loc>
+        <changefreq>never</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- pages/participas.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/participas.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- pages/nosotros.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/nosotros.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- pages/contacto.html -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/contacto.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Páginas legales -->
+    <url>
+        <loc>https://wefunproject.github.io/pages/privacidad.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+    
+    <url>
+        <loc>https://wefunproject.github.io/pages/terminos.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+</urlset>
