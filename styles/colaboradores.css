@@ -1,35 +1,84 @@
+/* ==========================================
+   LISTA DE COLABORADORES
+   ========================================== */
 .colaboradores-list {
     list-style: none;
-    margin-top: 0rem;
-    /* Reducimos el espacio superior */
-    margin-bottom: 2.5rem;
-    padding-left: 2.5rem;
-    /* Más margen izquierdo para indentación */
-    max-width: 720px;
+    margin: 1rem 0 3rem 0;
+    padding-left: 1rem;
+    max-width: 1000px;
+    /* opcional, para centrar contenido */
     color: #4b5563;
     font-size: clamp(1rem, 2.5vw, 1.15rem);
-    line-height: 1.75;
+    line-height: 1.8;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* NUEVO: columnas automáticas */
+    column-width: 250px;
+    /* ancho mínimo de cada columna */
+    column-gap: 2rem;
+    /* espacio entre columnas */
 }
 
 .colaboradores-list li {
     position: relative;
-    margin-bottom: 1rem;
-    /* Padding left mayor para que no choque con bullet */
-    padding-left: 1.5rem;
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
 }
 
+/* Bullet personalizado */
 .colaboradores-list li::before {
     content: "";
     position: absolute;
-    left: 0.5rem;
-    /* Movemos el bullet un poco más a la derecha */
-    top: 0.8em;
-    width: 0.6rem;
-    height: 0.6rem;
+    left: 0;
+    top: 0.7em;
+    width: 0.65rem;
+    height: 0.65rem;
     background-color: #287271;
+    border-radius: 50%;
 }
 
+/* ==========================================
+   SUBAPARTADOS
+   ========================================== */
+.colaboradores-subsection {
+    margin-bottom: 2.5rem;
+}
+
+.subsection-title {
+    font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+    margin-bottom: 1.2rem;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+/* ==========================================
+   CONTENEDOR DE LOGOS
+   ========================================== */
+.colaboradores-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.colaborador-logo {
+    max-width: 200px;
+    max-height: 100px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+/* Hover logos escritorio */
+@media (hover: hover) {
+    .colaborador-logo:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* ==========================================
+   ENLACES
+   ========================================== */
 #aqui:link,
 #aqui:visited,
 #aqui:hover,
@@ -38,4 +87,46 @@
     text-decoration: underline;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* ==========================================
+   AJUSTES PARA PANTALLAS PEQUEÑAS
+   ========================================== */
+@media (max-width: 640px) {
+
+    /* Lista en 1 columna y ajustes */
+    .colaboradores-list {
+        column-width: auto;
+        /* 1 columna */
+        column-count: 1;
+        padding-left: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .colaboradores-list li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.6rem;
+    }
+
+    .colaboradores-list li::before {
+        width: 0.5rem;
+        height: 0.5rem;
+        top: 0.7em;
+    }
+
+    /* Logos centrados y más grandes en móvil */
+    .colaboradores-logos {
+        justify-content: center;
+        gap: 1.2rem;
+    }
+
+    .colaborador-logo {
+        max-width: 80%;
+        max-height: 120px;
+    }
+
+    .subsection-title {
+        font-size: clamp(1.2rem, 4vw, 1.4rem);
+    }
 }
