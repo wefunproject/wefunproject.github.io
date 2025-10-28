@@ -1,5 +1,5 @@
 .my-header {
-    height: 100vh;
+    height: 100dvh;
     box-sizing: border-box;
     padding: 0 20px;
     display: flex;

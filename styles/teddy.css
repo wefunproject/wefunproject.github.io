@@ -10,7 +10,7 @@
     margin: 0.5rem auto 2.5rem;
     color: #4b5563;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-size: clamp(1rem, 2.5dvw, 1.15rem);
     line-height: 1.75;
 }
 

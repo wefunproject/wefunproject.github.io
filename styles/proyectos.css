@@ -47,14 +47,14 @@
     margin-top: 0;
     margin-bottom: 1rem;
     color: #1f2937;
-    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-size: clamp(1.6rem, 3dvw, 2rem);
 }
 
 /* Texto del proyecto */
 .proyecto-section .section-text {
     color: #4b5563;
     line-height: 1.7;
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-size: clamp(1rem, 2.5dvw, 1.15rem);
     text-align: justify;
     margin-bottom: auto;
     /* Empuja la imagen hacia abajo */
