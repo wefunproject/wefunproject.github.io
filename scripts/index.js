@@ -34,7 +34,7 @@ function traducirContenido(translations) {
     'no_results': 'no_results',
     'search_placeholder': 'search_placeholder',
     'search_button': 'search_button',
-    'proyectos-related': 'proyectos-related',
+    'wefun-and-related-projects': 'wefun-and-related-projects',
   };
 
   Object.entries(elementos).forEach(([id, key]) => {
