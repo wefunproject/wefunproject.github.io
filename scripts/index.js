@@ -261,11 +261,6 @@ function getQueryParam(param) {
   translations = traducciones;
   traducirContenido(traducciones);
 
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc && traducciones["meta-description-index"]) {
-    metaDesc.setAttribute("content", traducciones["meta-description-index"]);
-  }
-
   searchInput.placeholder = translations.search_placeholder
   searchButton.textContent = translations.search_button
   document.body.style.visibility = 'visible';
