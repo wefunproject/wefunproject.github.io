@@ -16,6 +16,8 @@ const traduccionesNosotros = {
   description_tatiana: 'description_tatiana',
   rol_javier: 'rol_javier',
   description_javier: 'description_javier',
+  rol_mari_carmen: 'rol_mari_carmen',
+  description_mari_carmen: 'description_mari_carmen',
 };
 
 function traducirContenidoNosotros(traducciones) {
