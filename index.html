@@ -49,19 +49,6 @@
   <link rel="stylesheet" href="/styles/common.css" />
   <link rel="stylesheet" href="/styles/header-index.css" />
   <link rel="stylesheet" href="/styles/index.css" />
-
-  <!-- Carga dinámica del bloque común del <head> -->
-  <script type="module">
-    fetch('/components/head-common.html')
-      .then(res => res.text())
-      .then(html => {
-        const temp = document.createElement('div');
-        temp.innerHTML = html;
-        Array.from(temp.children).forEach(el => {
-          document.head.appendChild(el);
-        });
-      });
-  </script>
 </head>
 
 <body>
@@ -105,7 +92,6 @@
   <div id="my-footer-container"></div>
 
   <script src="/scripts/common.js"></script>
-  <script type="module" src="/scripts/header-index.js"></script>
   <script type="module" src="/scripts/index.js"></script>
 
 </body>

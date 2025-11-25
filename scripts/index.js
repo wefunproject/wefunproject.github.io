@@ -280,3 +280,34 @@ function getQueryParam(param) {
 
   await loadPage(initialPage, initialTxt);
 })();
+
+// index.js (añade esto al final de tu IIFE o después de cargar las traducciones y noticias)
+document.addEventListener('DOMContentLoaded', () => {
+  const headerContainer = document.getElementById('my-header-container');
+
+  // Observamos el container por cambios de DOM para saber cuando se ha cargado el header
+  const observer = new MutationObserver(() => {
+    const scrollArrow = headerContainer.querySelector('.scroll-down-arrow');
+    const header = headerContainer.querySelector('.my-header');
+
+    if (scrollArrow && header) {
+      // Listener solo se añade una vez
+      if (!scrollArrow.dataset.listenerAdded) {
+        scrollArrow.addEventListener('click', () => {
+          const headerHeight = header.offsetHeight;
+          // Scroll suave hasta main
+          const mainEl = document.querySelector('main');
+          if (mainEl) {
+            mainEl.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: headerHeight, behavior: 'smooth' });
+          }
+        });
+        scrollArrow.dataset.listenerAdded = "true";
+        // console.log("Listener de scroll-down-arrow añadido desde index.js");
+      }
+    }
+  });
+
+  observer.observe(headerContainer, { childList: true, subtree: true });
+});
