@@ -102,3 +102,90 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = Array.from(document.querySelectorAll(".carousel-track img"));
+    const prevBtn = document.querySelector(".carousel-btn.prev");
+    const nextBtn = document.querySelector(".carousel-btn.next");
+    const dotsContainer = document.querySelector(".carousel-dots");
+
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".modal-close");
+
+    let currentIndex = 0;
+    let autoSlide;
+
+    // --- DOTS ---
+    slides.forEach((_, i) => {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+            goToSlide(i);
+            resetAutoSlide(); // Reinicia el autoslide al pulsar dot
+        });
+        dotsContainer.appendChild(dot);
+    });
+    const dots = Array.from(dotsContainer.children);
+
+    function updateSlides() {
+        slides.forEach((img, i) => img.classList.toggle("active", i === currentIndex));
+        dots.forEach((d, i) => d.classList.toggle("active", i === currentIndex));
+    }
+
+    function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; updateSlides(); }
+    function prevSlide() { currentIndex = (currentIndex - 1 + slides.length) % slides.length; updateSlides(); }
+    function goToSlide(i) { currentIndex = i; updateSlides(); }
+
+    // Auto slide: cada 4 segundos (4000 ms)
+    function startAutoSlide() { autoSlide = setInterval(nextSlide, 4000); }
+    function resetAutoSlide() { clearInterval(autoSlide); startAutoSlide(); }
+    function pauseCarousel() { clearInterval(autoSlide); }
+
+    nextBtn.addEventListener("click", () => { nextSlide(); resetAutoSlide(); });
+    prevBtn.addEventListener("click", () => { prevSlide(); resetAutoSlide(); });
+
+    // Swipe táctil
+    let startX = 0;
+    const track = document.querySelector(".carousel-track");
+    track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+    track.addEventListener("touchend", e => {
+        let endX = e.changedTouches[0].clientX;
+        if (endX - startX > 50) prevSlide();
+        else if (startX - endX > 50) nextSlide();
+        resetAutoSlide();
+    });
+
+    // --- MODAL ---
+    slides.forEach(img => {
+        img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            modalImg.alt = img.alt || "";
+            pauseCarousel();
+        });
+    });
+
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+        resetAutoSlide();
+    });
+
+    modal.addEventListener("click", e => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            resetAutoSlide();
+        }
+    });
+
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape" && modal.style.display === "block") {
+            modal.style.display = "none";
+            resetAutoSlide();
+        }
+    });
+
+    // Iniciar carrusel
+    updateSlides();
+    startAutoSlide();
+});
