@@ -63,7 +63,7 @@ function cargarHeaderYFooter() {
     ? '/components/header-index.html'
     : '/components/my-header.html';
 
-  console.log("Cargando header desde:", headerUrl);
+  // console.log("Cargando header desde:", headerUrl);
 
   const headerPromise = fetch(headerUrl)
     .then(response => response.text())
