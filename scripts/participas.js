@@ -5,6 +5,7 @@ function traducirContenido(translations) {
     'interesa-p1': 'interesa-p1',
     'criterios_inclusion': 'criterios_inclusion',
     'criterios_exclusion': 'criterios_exclusion',
+    'l0_inclusion': 'l0_inclusion',
     'l1_inclusion': 'l1_inclusion',
     'l2_inclusion': 'l2_inclusion',
     'l3_inclusion': 'l3_inclusion',
@@ -15,10 +16,7 @@ function traducirContenido(translations) {
     'l4_exclusion': 'l4_exclusion',
     'next_essays': 'next_essays',
     'interesa-p2': 'interesa-p2',
-    'madrid_l1': 'madrid_l1', // Este tiene HTML
-    'madrid_l2': 'madrid_l2',
-    'madrid_l3': 'madrid_l3',
-    'madrid_l4': 'madrid_l4',
+     // Esto tiene HTML
     'alicante_l1': 'alicante_l1',
     'alicante_l2': 'alicante_l2',
     'alicante_l3': 'alicante_l3',
@@ -29,7 +27,7 @@ function traducirContenido(translations) {
   Object.entries(elementos).forEach(([id, key]) => {
     const el = document.getElementById(id);
     if (el && translations[key]) {
-      if (id.includes('madrid') || id.includes('alicante')) {
+      if (id.includes('alicante')) {
         el.innerHTML = translations[key]; // contiene etiquetas
       } else {
         el.textContent = translations[key]; // texto plano
