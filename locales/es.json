@@ -1,7 +1,7 @@
 {
   "title": "WeFUN",
   "project_name": "WeFUN",
-  "project_description": "Uso innovador de tecnología portable para mejorar la funcionalidad en niños con parálisis cerebral unilateral",
+  "project_description": "Uso innovador de tecnología portable para mejorar la funcionalidad en niños/as con parálisis cerebral unilateral",
   "inicio": "Inicio",
   "wefun-and-related-projects": "WeFUN y otros proyectos relacionados",
   "proyectos-related": "Proyectos relacionados",
@@ -14,7 +14,7 @@
   "teddy": "Teddy Digital",
   "resumen-teddy": "Presentamos una nueva aplicación, Digital Teddy, desarrollada para realizar de forma estandarizada el Teddy Bear Cancellation Test, TBCT) en una tableta. Una herramienta práctica en entornos clínicos y académicos para evaluar la atención visual selectiva.",
   "teddy-1": "La atención  selectiva es esencial en la vida diaria y desempeña un papel importante durante la infancia, ya que facilita el desarrollo del movimiento o de la cognición. Sin embargo, no existen suficientes herramientas estandarizadas que sean prácticas en entornos clínicos y académicos.",
-  "teddy-2": "Presentamos una nueva aplicación, <em>Digital Teddy</em>, desarrollada para realizar de forma estandarizada el Test de Cancelación del Osito de Peluche (<em>Teddy Bear Cancellation Test</em>, TBCT) en una tableta.",
+  "teddy-2": "Presentamos una nueva aplicación, <em>Digital Teddy</em>, desarrollada para realizar de forma estandarizada el Teddy Bear Cancellation Test (TBCT) en una tableta.",
   "teddy-3": "En el estudio inicial, 45 niñas y niños con desarrollo típico y edades de 2 a 8 años, así como 27 niños y niñas con diferentes alteraciones del neurodesarrollo, han realizado el test en la versión digital y en papel.",
   "teddy-4": "Las variables que se miden en el TBCT son el número y la ubicación de las omisiones, así como la localización de los tres primeros objetivos encontrados. Digital Teddy también registra la precisión en la localización de las dianas y el tiempo total empleado.",
   "teddy-5": "Los datos preliminares mostraron que el número de omisiones fue similar tanto en la versión original como en la digital del TBCT. La TBCT digital presenta una buena validez test-retest cuando los objetivos se presentan en orden aleatorio y se proporciona un primer intento para asegurar la comprensión de la tarea. Estudios futuros ampliarán la muestra en las diferentes patologías, proporcionando también datos normativos. Además, Digital Teddy registra los datos con mayor precisión  (precisión, tiempo, etc.) y puede configurarse de forma distinta según la edad o el nivel de atención. Los datos también revelaan una muy buena satisfacción por parte de los administradores del test.",
