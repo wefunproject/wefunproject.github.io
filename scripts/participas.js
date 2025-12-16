@@ -16,7 +16,7 @@ function traducirContenido(translations) {
     'l4_exclusion': 'l4_exclusion',
     'next_essays': 'next_essays',
     'interesa-p2': 'interesa-p2',
-     // Esto tiene HTML
+    // Esto tiene HTML
     'alicante_l1': 'alicante_l1',
     'alicante_l2': 'alicante_l2',
     'alicante_l3': 'alicante_l3',
@@ -27,11 +27,7 @@ function traducirContenido(translations) {
   Object.entries(elementos).forEach(([id, key]) => {
     const el = document.getElementById(id);
     if (el && translations[key]) {
-      if (id.includes('alicante')) {
-        el.innerHTML = translations[key]; // contiene etiquetas
-      } else {
-        el.textContent = translations[key]; // texto plano
-      }
+      el.innerHTML = translations[key];
     }
   });
 }
